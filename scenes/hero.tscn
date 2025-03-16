@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://v5g7mogilqa3"]
+[gd_scene load_steps=7 format=3 uid="uid://v5g7mogilqa3"]
 
 [ext_resource type="Texture2D" uid="uid://bry2qmps3ujl5" path="res://assets/hero/costas1 copiar.png" id="1_r07jd"]
 [ext_resource type="Texture2D" uid="uid://cervk1v7tb530" path="res://assets/hero/costas2 copiar.png" id="2_d3g61"]
+[ext_resource type="PackedScene" uid="uid://iav25jbeqhs" path="res://scenes/shield.tscn" id="3_06baw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3ktr"]
 atlas = ExtResource("1_r07jd")
@@ -28,7 +29,6 @@ animations = [{
 [node name="Hero" type="CharacterBody2D"]
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(562, 431)
 scale = Vector2(0.309082, 0.308838)
 sprite_frames = SubResource("SpriteFrames_3crbk")
 animation = &"Idle"
@@ -36,3 +36,6 @@ autoplay = "Idle"
 frame_progress = 0.768155
 
 [node name="state_machine" type="Node" parent="."]
+
+[node name="Shield" parent="." instance=ExtResource("3_06baw")]
+z_index = -1
