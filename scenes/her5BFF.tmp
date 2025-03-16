@@ -124,7 +124,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -213,9 +213,9 @@ script = ExtResource("1_s16fn")
 position = Vector2(554, 421)
 scale = Vector2(9.01392, 8.71692)
 sprite_frames = SubResource("SpriteFrames_3crbk")
-animation = &"walk"
+animation = &"parry"
 autoplay = "Idle"
-frame_progress = 0.723812
+frame_progress = 0.2826
 
 [node name="player_colision_shape" type="CollisionShape2D" parent="."]
 position = Vector2(551, 427)

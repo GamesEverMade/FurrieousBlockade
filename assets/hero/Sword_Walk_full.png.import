@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bry2qmps3ujl5"
-path="res://.godot/imported/costas1 copiar.png-9f8a4ad83524d9764377d906725e7da9.ctex"
+uid="uid://dj7o804d6eyvk"
+path="res://.godot/imported/Sword_Walk_full.png-23e1dcd2032cf6ffc13bf4b1a6c444d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hero/costas1 copiar.png"
-dest_files=["res://.godot/imported/costas1 copiar.png-9f8a4ad83524d9764377d906725e7da9.ctex"]
+source_file="res://assets/hero/Sword_Walk_full.png"
+dest_files=["res://.godot/imported/Sword_Walk_full.png-23e1dcd2032cf6ffc13bf4b1a6c444d1.ctex"]
 
 [params]
 
