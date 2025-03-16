@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	if current_state:
 		current_state.update(delta)
 	
-	print(current_state)
+	#print(current_state)
 
 func transition_to(state_name: String) -> void:
 	"""
