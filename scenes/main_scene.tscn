@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://buog32t2oj81d"]
+[gd_scene load_steps=3 format=3 uid="uid://buog32t2oj81d"]
 
+[ext_resource type="PackedScene" uid="uid://d3kp76u01gqcw" path="res://scenes/test_level.tscn" id="1_pw63i"]
 [ext_resource type="PackedScene" uid="uid://v5g7mogilqa3" path="res://scenes/hero.tscn" id="1_w2twt"]
 
 [node name="MainScene" type="Node2D"]
 
+[node name="TestLevel" parent="." instance=ExtResource("1_pw63i")]
+
 [node name="Hero" parent="." instance=ExtResource("1_w2twt")]
-position = Vector2(561, 502)
+position = Vector2(561, 490)

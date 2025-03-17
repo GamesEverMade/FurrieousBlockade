@@ -47,8 +47,8 @@ func get_clamped_mouse_position() -> Vector2:
 	var shield_to_player_angle : float = shield_to_player_vector.angle()
 	
 	## Calculating the minimum and maximum angle.
-	var min_angle : float =  deg_to_rad(-90-clamp_angle_range/2) # -90 is up direction in godot. 
-	var max_angle : float =  deg_to_rad(-90+clamp_angle_range/2)
+	var min_angle : float =  deg_to_rad(-90.0-clamp_angle_range/2.0) # -	90 is up direction in godot. 
+	var max_angle : float =  deg_to_rad(-90.0+clamp_angle_range/2.0)
 	
 	shield_to_player_angle = clamp(shield_to_player_angle, min_angle, max_angle)
 	"""Known Issue: When angle between shield and player is full left, angle goes from +Pi to -Pi and snaps to zero, shifting it to the right.""" 
