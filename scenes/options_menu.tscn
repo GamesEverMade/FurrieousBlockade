@@ -1,0 +1,147 @@
+[gd_scene load_steps=3 format=3 uid="uid://c20vo7h2xgd3k"]
+
+[ext_resource type="Script" uid="uid://7jhh0pjctk2x" path="res://scripts/options_menu.gd" id="1_liyum"]
+[ext_resource type="Texture2D" uid="uid://cmhawnaioo3q2" path="res://assets/test_background/images.jpeg" id="2_ijpji"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_liyum")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ijpji")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+layout_mode = 2
+current_tab = 2
+
+[node name="Player" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Video" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Audio" type="TabBar" parent="MarginContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 1
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 575.0
+offset_bottom = 65.0
+theme_override_constants/separation = 30
+
+[node name="volumebox" type="HBoxContainer" parent="MarginContainer/TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 30
+
+[node name="volume_label" type="Label" parent="MarginContainer/TabContainer/Audio/VBoxContainer/volumebox"]
+layout_mode = 2
+text = "Main Volume"
+
+[node name="volume" type="HSlider" parent="MarginContainer/TabContainer/Audio/VBoxContainer/volumebox"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+value = 80.0
+
+[node name="mute_label" type="Label" parent="MarginContainer/TabContainer/Audio/VBoxContainer/volumebox"]
+layout_mode = 2
+text = "Mute"
+
+[node name="mute_checkbox" type="CheckBox" parent="MarginContainer/TabContainer/Audio/VBoxContainer/volumebox"]
+layout_mode = 2
+
+[node name="Controls" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Quit" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Quit"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 302.0
+offset_bottom = 70.0
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Quit/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Are you sure that you want to quit?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TabContainer/Quit/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Quit" type="Button" parent="MarginContainer/TabContainer/Quit/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Quit Game... Pleeeseee..."
+
+[node name="Main menu" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Main menu"]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 302.0
+offset_bottom = 70.0
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Main menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Would you Like to return to the main menu?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TabContainer/Main menu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Main menu" type="Button" parent="MarginContainer/TabContainer/Main menu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Return to Main Menu"
+
+[connection signal="value_changed" from="MarginContainer/TabContainer/Audio/VBoxContainer/volumebox/volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="MarginContainer/TabContainer/Audio/VBoxContainer/volumebox/mute_checkbox" to="." method="_on_mute_checkbox_toggled"]
+[connection signal="pressed" from="MarginContainer/TabContainer/Quit/VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/TabContainer/Main menu/VBoxContainer/HBoxContainer/Main menu" to="." method="_on_main_menu_pressed"]
