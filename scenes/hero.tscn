@@ -1,16 +1,16 @@
 [gd_scene load_steps=38 format=3 uid="uid://v5g7mogilqa3"]
 
-[ext_resource type="Script" uid="uid://dmt5g0nx0oib1" path="res://scripts/player.gd" id="1_s16fn"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_s16fn"]
 [ext_resource type="Texture2D" uid="uid://dhpl2u53aarl1" path="res://assets/hero/Sword_Idle_full.png" id="2_fkil5"]
 [ext_resource type="PackedScene" uid="uid://iav25jbeqhs" path="res://scenes/shield.tscn" id="3_06baw"]
 [ext_resource type="Texture2D" uid="uid://4tvufkmajojm" path="res://assets/hero/Sword_Jump_full.png" id="3_0660h"]
-[ext_resource type="Script" uid="uid://6jntm6f46h1m" path="res://scripts/state_machine.gd" id="3_xaxvm"]
+[ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_xaxvm"]
 [ext_resource type="Texture2D" uid="uid://f1c258bofjh7" path="res://assets/hero/Sword_attack_full.png" id="4_8adtx"]
 [ext_resource type="Texture2D" uid="uid://dj7o804d6eyvk" path="res://assets/hero/Sword_Walk_full.png" id="5_0am28"]
-[ext_resource type="Script" uid="uid://dofeu1npqycva" path="res://scripts/player_idle.gd" id="5_xcsg2"]
-[ext_resource type="Script" uid="uid://b2hr8n2p5jtto" path="res://scripts/player_walk.gd" id="6_t8tpr"]
-[ext_resource type="Script" uid="uid://ratjfc6lqyx2" path="res://scripts/player_parry.gd" id="9_8psuh"]
-[ext_resource type="Script" uid="uid://xb55cplapo8f" path="res://scripts/player_jump.gd" id="9_smiex"]
+[ext_resource type="Script" path="res://scripts/player_idle.gd" id="5_xcsg2"]
+[ext_resource type="Script" path="res://scripts/player_walk.gd" id="6_t8tpr"]
+[ext_resource type="Script" path="res://scripts/player_parry.gd" id="9_8psuh"]
+[ext_resource type="Script" path="res://scripts/player_jump.gd" id="9_smiex"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_610uc"]
 atlas = ExtResource("2_fkil5")

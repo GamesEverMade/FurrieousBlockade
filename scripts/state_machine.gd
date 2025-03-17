@@ -1,5 +1,6 @@
 extends Node
 class_name state_machine
+
 ## State Machine
 ## Manages different states in a scene.
 ## 

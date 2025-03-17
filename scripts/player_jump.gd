@@ -1,5 +1,7 @@
 extends State
 
+## JUMP STATE
+
 # Importing Player's Speed to the Script
 var jump_force = Player.new().JUMP_FORCE
 var gravity = Globals.new().GRAVITY

@@ -1,5 +1,7 @@
 extends State
 
+## WALK STATE
+
 func enter():
 	if player:
 		player.player_sprite.play('walk')

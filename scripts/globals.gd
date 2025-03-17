@@ -1,7 +1,7 @@
 extends Node
 class_name Globals
 
-## Globals
+## GLOBALS
 ##
 ## Global Variables to be used throughout the game.
 

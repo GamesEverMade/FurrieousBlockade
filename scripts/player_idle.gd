@@ -1,5 +1,7 @@
 extends State
 
+## IDLE STATE
+
 func enter() -> void:
 	if player:
 		player.player_sprite.play('idle')
