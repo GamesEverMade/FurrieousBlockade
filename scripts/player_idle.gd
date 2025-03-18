@@ -19,6 +19,9 @@ func update(_delta) -> void:
 	# TO JUMP
 	elif Input.is_action_just_pressed("up"):
 		state_finished.emit("jump")
+	# TO ROLL
+	elif Input.is_action_just_pressed("roll"):
+		state_finished.emit("roll")
 	# TO PARRY
 	elif Input.is_action_just_pressed("parry"):
 		state_finished.emit("parry")

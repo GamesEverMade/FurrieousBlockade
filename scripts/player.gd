@@ -18,6 +18,7 @@ Players properties
 """
 @export var SPEED: float = 200
 @export var JUMP_FORCE: float = 500
+@export var LIFE : int = 12 # Thinking about zelda's hearth, each hart can be divided into 4 pieces, 3 hearts... 12 pieces.
 @onready var player_sprite: AnimatedSprite2D = $player_sprite
 
 """

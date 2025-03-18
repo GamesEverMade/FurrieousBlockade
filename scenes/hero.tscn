@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://v5g7mogilqa3"]
+[gd_scene load_steps=49 format=3 uid="uid://v5g7mogilqa3"]
 
 [ext_resource type="Script" uid="uid://dmt5g0nx0oib1" path="res://scripts/player.gd" id="1_s16fn"]
 [ext_resource type="Texture2D" uid="uid://dhpl2u53aarl1" path="res://assets/hero/Sword_Idle_full.png" id="2_fkil5"]
@@ -11,6 +11,20 @@
 [ext_resource type="Script" uid="uid://b2hr8n2p5jtto" path="res://scripts/player_walk.gd" id="6_t8tpr"]
 [ext_resource type="Script" uid="uid://ratjfc6lqyx2" path="res://scripts/player_parry.gd" id="9_8psuh"]
 [ext_resource type="Script" uid="uid://xb55cplapo8f" path="res://scripts/player_jump.gd" id="9_smiex"]
+[ext_resource type="Script" uid="uid://cteikdw8tmxw0" path="res://scripts/player_roll.gd" id="11_sryfu"]
+[ext_resource type="Script" uid="uid://fyg72uwdecjs" path="res://scripts/player_die.gd" id="12_6mqrs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wynkb"]
+atlas = ExtResource("4_8adtx")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuux7"]
+atlas = ExtResource("4_8adtx")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m75t"]
+atlas = ExtResource("4_8adtx")
+region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_610uc"]
 atlas = ExtResource("2_fkil5")
@@ -84,6 +98,30 @@ region = Rect2(384, 192, 64, 64)
 atlas = ExtResource("4_8adtx")
 region = Rect2(448, 192, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6xj2"]
+atlas = ExtResource("5_0am28")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sryfu"]
+atlas = ExtResource("5_0am28")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mqrs"]
+atlas = ExtResource("5_0am28")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8rms"]
+atlas = ExtResource("5_0am28")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lunib"]
+atlas = ExtResource("5_0am28")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2grt1"]
+atlas = ExtResource("5_0am28")
+region = Rect2(320, 0, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_s0uif"]
 atlas = ExtResource("5_0am28")
 region = Rect2(0, 192, 64, 64)
@@ -110,6 +148,20 @@ region = Rect2(320, 192, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3crbk"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wynkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuux7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m75t")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_610uc")
@@ -181,6 +233,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_d6xj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sryfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mqrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8rms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lunib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2grt1")
+}],
+"loop": true,
+"name": &"roll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_s0uif")
 }, {
 "duration": 1.0,
@@ -204,22 +279,27 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7fttn"]
-radius = 36.0
-height = 182.0
+radius = 34.0
+height = 140.0
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_s16fn")
 
 [node name="player_sprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(9.01392, 8.71692)
+scale = Vector2(7, 6.77)
 sprite_frames = SubResource("SpriteFrames_3crbk")
-animation = &"idle"
+animation = &"die"
 autoplay = "idle"
 
 [node name="player_colision_shape" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 11)
 shape = SubResource("CapsuleShape2D_7fttn")
 
 [node name="parry_timer" type="Timer" parent="."]
+
+[node name="roll_timer" type="Timer" parent="."]
+
+[node name="die_timer" type="Timer" parent="."]
 
 [node name="state_machine" type="Node" parent="."]
 script = ExtResource("3_xaxvm")
@@ -236,7 +316,16 @@ script = ExtResource("9_8psuh")
 [node name="jump" type="Node" parent="state_machine"]
 script = ExtResource("9_smiex")
 
+[node name="roll" type="Node" parent="state_machine"]
+script = ExtResource("11_sryfu")
+
+[node name="die" type="Node" parent="state_machine"]
+script = ExtResource("12_6mqrs")
+
 [node name="Shield" parent="." instance=ExtResource("3_06baw")]
 z_index = -1
+position = Vector2(0, 2)
 
 [connection signal="timeout" from="parry_timer" to="state_machine/parry" method="_on_parry_timer_timeout"]
+[connection signal="timeout" from="roll_timer" to="state_machine/roll" method="_on_roll_timer_timeout"]
+[connection signal="timeout" from="die_timer" to="state_machine/die" method="_on_die_timer_timeout"]
