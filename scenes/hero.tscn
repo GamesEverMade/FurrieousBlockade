@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://v5g7mogilqa3"]
+[gd_scene load_steps=50 format=3 uid="uid://v5g7mogilqa3"]
 
 [ext_resource type="Script" uid="uid://dmt5g0nx0oib1" path="res://scripts/player.gd" id="1_s16fn"]
 [ext_resource type="Texture2D" uid="uid://dhpl2u53aarl1" path="res://assets/hero/Sword_Idle_full.png" id="2_fkil5"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://xb55cplapo8f" path="res://scripts/player_jump.gd" id="9_smiex"]
 [ext_resource type="Script" uid="uid://cteikdw8tmxw0" path="res://scripts/player_roll.gd" id="11_sryfu"]
 [ext_resource type="Script" uid="uid://fyg72uwdecjs" path="res://scripts/player_die.gd" id="12_6mqrs"]
+[ext_resource type="Script" uid="uid://co5dybdvwfwhu" path="res://scenes/player_damage.gd" id="13_k8rms"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wynkb"]
 atlas = ExtResource("4_8adtx")
@@ -321,6 +322,9 @@ script = ExtResource("11_sryfu")
 
 [node name="die" type="Node" parent="state_machine"]
 script = ExtResource("12_6mqrs")
+
+[node name="damage" type="Node" parent="state_machine"]
+script = ExtResource("13_k8rms")
 
 [node name="Shield" parent="." instance=ExtResource("3_06baw")]
 z_index = -1

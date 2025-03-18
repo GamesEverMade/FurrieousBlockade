@@ -29,7 +29,6 @@ func _ready() -> void:
 	for state in $state_machine.get_children():
 		if state is State:
 			state.player = self
-		
 
 """
 _process:
