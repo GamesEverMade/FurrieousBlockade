@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=42 format=3 uid="uid://v5g7mogilqa3"]
 
 [ext_resource type="Script" uid="uid://diopgnpoybday" path="res://scripts/player_basic.gd" id="1_y2sko"]
