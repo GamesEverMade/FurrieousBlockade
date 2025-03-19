@@ -27,6 +27,7 @@ _ready:
 Called once, as soon as the scene is rendered. The functions in this methods will run once.
 """
 func _ready() -> void:
+	GameManager.player = self
 	pass
 
 """

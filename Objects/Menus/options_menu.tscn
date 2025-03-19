@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c20vo7h2xgd3k"]
 
-[ext_resource type="Script" uid="uid://7jhh0pjctk2x" path="res://scripts/Menus/options_menu.gd" id="1_liyum"]
+[ext_resource type="Script" uid="uid://7jhh0pjctk2x" path="res://Objects/Menus/options_menu.gd" id="1_liyum"]
 [ext_resource type="Texture2D" uid="uid://cmhawnaioo3q2" path="res://assets/test_background/images.jpeg" id="2_ijpji"]
 
 [node name="OptionsMenu" type="Control"]

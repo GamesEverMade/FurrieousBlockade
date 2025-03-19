@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dcvfi2ssjt5eg"]
 
-[ext_resource type="Script" uid="uid://wmfod4csv8oh" path="res://scripts/Enemies/projectile.gd" id="1_q3m7n"]
+[ext_resource type="Script" uid="uid://wmfod4csv8oh" path="res://Objects/Enemies/projectile.gd" id="1_q3m7n"]
 [ext_resource type="Texture2D" uid="uid://ck8p7sl76xd73" path="res://assets/test_background/morcego-Sheet.png" id="2_q3m7n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_softn"]
