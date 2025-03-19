@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxl6hvv51nj4p"]
+
+[ext_resource type="Script" uid="uid://cswp60ryxdc0y" path="res://scripts/Items/health.gd" id="1_2rad1"]
+[ext_resource type="Texture2D" uid="uid://boc20iw25ixpv" path="res://assets/test_background/fnb_sprite/14.png" id="2_uy33w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj4mv"]
+atlas = ExtResource("2_uy33w")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58c75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj4mv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_but5r"]
+radius = 13.0384
+
+[node name="Health" type="Area2D" groups=["Cure"]]
+script = ExtResource("1_2rad1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 1.9375)
+sprite_frames = SubResource("SpriteFrames_58c75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_but5r")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
