@@ -9,6 +9,7 @@ func enter() -> void:
 
 func update(_delta) -> void:
 	_on_die_timer_timeout()
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	pass
 
 func _on_die_timer_timeout() -> void:

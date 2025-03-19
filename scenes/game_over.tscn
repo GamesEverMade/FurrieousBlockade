@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc4omnm4um3yi"]
+
+[ext_resource type="Script" uid="uid://ck8clpw0fnhei" path="res://scenes/game_over.gd" id="1_wqhvx"]
+[ext_resource type="Texture2D" uid="uid://dliibpmlxj0ys" path="res://assets/test_background/game_over.jpg" id="1_xeevv"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wqhvx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xeevv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="game_over" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 72
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 24
+text = "You Loose, try again!"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 40
+
+[node name="new_game" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "New Game"
+
+[node name="main_menu" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/main_menu" to="." method="_on_main_menu_pressed"]
