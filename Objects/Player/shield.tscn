@@ -1,16 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://iav25jbeqhs"]
 
 [ext_resource type="Script" uid="uid://dcc8dh4c7ac0y" path="res://Objects/Player/shield.gd" id="1_ohv3a"]
-[ext_resource type="Texture2D" uid="uid://c4gcfc45vwgli" path="res://assets/icon.svg" id="1_vtru8"]
+[ext_resource type="Texture2D" uid="uid://dtjl3l80ninep" path="res://assets/hero/shield.png" id="2_g3emn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohv3a"]
-size = Vector2(83, 83)
+[sub_resource type="CircleShape2D" id="CircleShape2D_g3emn"]
+radius = 41.0122
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ohv3a"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_vtru8")
+"texture": ExtResource("2_g3emn")
 }],
 "loop": true,
 "name": &"default",
@@ -21,11 +21,22 @@ animations = [{
 script = ExtResource("1_ohv3a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1.5)
-shape = SubResource("RectangleShape2D_ohv3a")
+shape = SubResource("CircleShape2D_g3emn")
 
 [node name="ShieldAnimatedSprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.262182, 0.257936)
 sprite_frames = SubResource("SpriteFrames_ohv3a")
+autoplay = "default"
+
+[node name="ParryTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="ParryCooldown" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="ParryTimer" to="." method="_on_parry_timer_timeout"]
+[connection signal="timeout" from="ParryCooldown" to="." method="_on_parry_cooldown_timeout"]

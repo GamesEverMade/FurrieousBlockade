@@ -12,6 +12,17 @@ class_name Shield
 """
 @export var clamp_radius:float = 150
 @onready var player: Player = $".."
+@onready var parry_timer: Timer = $ParryTimer
+@onready var parry_cooldown: Timer = $ParryCooldown
+
+
+enum State{
+	default,
+	parry,
+	cooldown
+}
+
+var state = State.default
 
 """
 _ready:
@@ -29,19 +40,23 @@ The functions in this methods will run every frame.
 """
 func _process(_delta: float) -> void:
 	position = get_clamped_mouse_position()
+	if Input.is_action_pressed("LeftClick") and state == State.default:
+		state = State.parry
+		set_modulate(Color(1, 0, 0, 1))
+		parry_timer.start()
 
 """
 get_clamped_mouse_position:
 Uses the mouse position amd the character position in order to
 Return the final position of the shield.
 """
-func get_clamped_mouse_position() -> Vector2:
+func get_clamped_mouse_position() -> Vector2: 
 	## 
 	var final_position: Vector2 = Vector2.ZERO
 	var mouse_position : Vector2 = get_global_mouse_position()
 	
 	## Calculating the variation of the shield position, distance and angle.
-	var shield_to_player_vector  : Vector2 = mouse_position - player.position
+	var shield_to_player_vector  : Vector2 = mouse_position - player.global_position
 	var shield_to_player_distance  : float = shield_to_player_vector.length()
 	var shield_to_player_angle : float = shield_to_player_vector.angle()
 	
@@ -51,11 +66,21 @@ func get_clamped_mouse_position() -> Vector2:
 	final_position = Vector2.from_angle(shield_to_player_angle) * shield_to_player_distance
 	return final_position
 
-
 func _on_area_entered(area: Area2D) -> void:
-	if(area.is_in_group('Projectiles')): # and is idle
+	
+	var should_destroy = area.is_in_group('Projectiles') and state == State.default
+	var should_deflect = area.is_in_group('Projectiles') and state == State.parry and area.has_method('deflect')
+	
+	if should_deflect: 
+		area.deflect()
+	elif should_destroy: 
 		area.queue_free()
 
-	if(area.is_in_group('Projectile')): #and is parry
-		#rebater
-		pass
+func _on_parry_timer_timeout() -> void:
+	state = State.cooldown
+	set_modulate(Color(0, 1, 0, 1))
+	parry_cooldown.start()
+	
+func _on_parry_cooldown_timeout() -> void:
+	state = State.default
+	set_modulate(Color(1, 1, 1, 1))

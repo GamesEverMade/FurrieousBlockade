@@ -7,12 +7,12 @@ func _ready() -> void:
 	pass
 
 func _physics_process(_delta: float) -> void:
-	hud.update_health_label(player.LIFE)
-	hud.update_boost_label(player.BOOSTS)
+	hud.update_health_label(player.life)
+	hud.update_boost_label(player.boosts)
 	_text_alert_update(_delta)
 
 func _text_alert_update(_delta):
-	var life = player.LIFE
+	var life = player.life
 	match life:
 		7: 
 			hud.update_status_label("Fender is Healthy!")

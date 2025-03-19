@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://b1tbo7hvu36f7" path="res://Objects/Enemies/enemy_light.tscn" id="7_dcom4"]
 
 [node name="MainScene" type="Node2D"]
-position = Vector2(-47, 49)
 script = ExtResource("1_384xt")
 
 [node name="GameManager" type="Node" parent="."]
