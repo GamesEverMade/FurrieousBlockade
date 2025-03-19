@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://buog32t2oj81d"]
+[gd_scene load_steps=8 format=3 uid="uid://buog32t2oj81d"]
 
 [ext_resource type="Script" uid="uid://ddavnrlvgtt31" path="res://scripts/Scenes/main_scene.gd" id="1_384xt"]
 [ext_resource type="PackedScene" uid="uid://nmt2cqemchjd" path="res://scenes/UI/hud.tscn" id="2_dstxs"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dcvfi2ssjt5eg" path="res://scenes/Enemies/projectile.tscn" id="4_ahxxq"]
 [ext_resource type="PackedScene" uid="uid://bxl6hvv51nj4p" path="res://scenes/Items/health.tscn" id="5_4dqbf"]
 [ext_resource type="PackedScene" uid="uid://bxyvwukah0k7o" path="res://scenes/Items/boost.tscn" id="5_dstxs"]
+[ext_resource type="PackedScene" uid="uid://b1tbo7hvu36f7" path="res://scenes/Enemies/enemy_light.tscn" id="7_dcom4"]
 
 [node name="MainScene" type="Node2D"]
 position = Vector2(-47, 49)
@@ -51,3 +52,6 @@ position = Vector2(1101, 428)
 
 [node name="Health" parent="." instance=ExtResource("5_4dqbf")]
 position = Vector2(1007, 625)
+
+[node name="EnemyLight" parent="." instance=ExtResource("7_dcom4")]
+position = Vector2(298, 58)

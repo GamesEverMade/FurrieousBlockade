@@ -57,6 +57,10 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group('Boosts'):
 		add_boost_point()
 		print('Player boosts is now {0}'.format([BOOSTS]))
+	
+	if area.is_in_group('Enemies'):
+		remove_life_point()
+		print('Player life is now {0}'.format([LIFE]))
 
 func add_life_point():
 	LIFE += 1
