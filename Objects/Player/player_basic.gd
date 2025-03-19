@@ -11,15 +11,13 @@ class_name Player
 Properties:
 Players properties
 
-@param SPEED : Defines the Player's movement speed.
-@param JUMP_FORCE : Defines the Player's jump force against the gravity.
+@param speed : Defines the Player's movement speed.
 @param state_machine : Requires an State Machine Node that makes the management of the states.
 @param player_sprite : Requires
 """
 @export var speed: float = 500
-@export var JUMP_FORCE: float = 500
-@export var LIFE : int = 7
-@export var BOOSTS : int = 1
+@export var life : int = 7
+@export var boosts : int = 1
 @onready var player_sprite: AnimatedSprite2D = $player_sprite
 
 """
@@ -48,29 +46,15 @@ func move_player(_delta):
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group('Projectiles'):
-		remove_life_point()
-		print('Player life is now {0}'.format([LIFE]))
+		life -= area.projectile_damage
+		print('Player life is now {0}'.format([life]))
 	
-	if area.is_in_group('Cure'):
-		add_life_point()
-		print('Player life is now {0}'.format([LIFE]))
+	#if area.is_in_group('Cure'):
+		#life += area.projectile_damage
+		#print('Player life is now {0}'.format([life]))
 	
-	if area.is_in_group('Boosts'):
-		add_boost_point()
-		print('Player boosts is now {0}'.format([BOOSTS]))
-	
-	if area.is_in_group('Enemies'):
-		remove_life_point()
-		print('Player life is now {0}'.format([LIFE]))
-
-func add_life_point():
-	LIFE += 1
-
-func remove_life_point():
-	LIFE -= 1
-
-func add_boost_point():
-	BOOSTS += 1
-
-func remove_boost_point():
-	BOOSTS -= 1
+	#if area.is_in_group('Boosts'):
+		#print('Player boosts is now {0}'.format([boosts]))
+	#
+	#if area.is_in_group('Enemies'):
+		#print('Player life is now {0}'.format([life]))
