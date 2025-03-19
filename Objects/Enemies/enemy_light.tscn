@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1tbo7hvu36f7"]
+
+[ext_resource type="Script" uid="uid://wb8duf6wnbf7" path="res://Objects/Enemies/enemy_light.gd" id="1_rrtlb"]
+[ext_resource type="Texture2D" uid="uid://c4gcfc45vwgli" path="res://assets/icon.svg" id="1_vgxu5"]
+[ext_resource type="PackedScene" uid="uid://dcvfi2ssjt5eg" path="res://Objects/Enemies/projectile.tscn" id="2_7y3oy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ikvh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vgxu5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhej5"]
+size = Vector2(122, 118)
+
+[node name="EnemyLight" type="Area2D" groups=["Enemies"]]
+script = ExtResource("1_rrtlb")
+projectile = ExtResource("2_7y3oy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1ikvh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uhej5")
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

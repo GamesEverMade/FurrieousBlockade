@@ -27,6 +27,8 @@ Projectiles=""
 Player=""
 Cure="cura"
 Boosts=""
+Enemies=""
+Shield=""
 
 [input]
 

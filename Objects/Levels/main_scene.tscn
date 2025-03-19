@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://buog32t2oj81d"]
+
+[ext_resource type="Script" uid="uid://ddavnrlvgtt31" path="res://Objects/Levels/main_scene.gd" id="1_384xt"]
+[ext_resource type="Script" uid="uid://cjpsi65msxyfn" path="res://game_manager.gd" id="2_76pxp"]
+[ext_resource type="PackedScene" uid="uid://nmt2cqemchjd" path="res://Objects/UI/hud.tscn" id="2_dstxs"]
+[ext_resource type="PackedScene" uid="uid://v5g7mogilqa3" path="res://Objects/Player/player.tscn" id="3_dcom4"]
+[ext_resource type="PackedScene" uid="uid://bxl6hvv51nj4p" path="res://Objects/Items/health.tscn" id="5_4dqbf"]
+[ext_resource type="PackedScene" uid="uid://bxyvwukah0k7o" path="res://Objects/Items/boost.tscn" id="5_dstxs"]
+[ext_resource type="PackedScene" uid="uid://b1tbo7hvu36f7" path="res://Objects/Enemies/enemy_light.tscn" id="7_dcom4"]
+
+[node name="MainScene" type="Node2D"]
+position = Vector2(-47, 49)
+script = ExtResource("1_384xt")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("2_76pxp")
+
+[node name="CanvasGroup" type="CanvasLayer" parent="."]
+
+[node name="hud" parent="CanvasGroup" instance=ExtResource("2_dstxs")]
+offset_left = 11.0
+offset_top = 6.0
+offset_right = 11.0
+offset_bottom = 6.0
+
+[node name="Hero" parent="." instance=ExtResource("3_dcom4")]
+position = Vector2(689, 309)
+
+[node name="Boost" parent="." instance=ExtResource("5_dstxs")]
+position = Vector2(1101, 428)
+
+[node name="Health" parent="." instance=ExtResource("5_4dqbf")]
+position = Vector2(1007, 625)
+
+[node name="EnemyLight" parent="." instance=ExtResource("7_dcom4")]
+position = Vector2(298, 58)

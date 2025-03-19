@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://nmt2cqemchjd"]
 
-[ext_resource type="Script" uid="uid://b53nimgn6ge26" path="res://scripts/UI/hud.gd" id="1_5ysmq"]
+[ext_resource type="Script" uid="uid://b53nimgn6ge26" path="res://Objects/UI/hud.gd" id="1_5ysmq"]
 [ext_resource type="Texture2D" uid="uid://bju5ae7le48il" path="res://assets/test_background/Item 3-1.png.png" id="1_ahhtf"]
 [ext_resource type="Texture2D" uid="uid://dffca10l8ebre" path="res://assets/test_background/Cat Paw Print.png" id="2_oo0fn"]
 

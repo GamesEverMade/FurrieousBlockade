@@ -50,3 +50,12 @@ func get_clamped_mouse_position() -> Vector2:
 	
 	final_position = Vector2.from_angle(shield_to_player_angle) * shield_to_player_distance
 	return final_position
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if(area.is_in_group('Projectiles')): # and is idle
+		area.queue_free()
+
+	if(area.is_in_group('Projectile')): #and is parry
+		#rebater
+		pass

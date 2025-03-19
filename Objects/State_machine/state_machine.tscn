@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://tvyw6vhgtqdt"]
+
+[ext_resource type="Script" uid="uid://6jntm6f46h1m" path="res://Objects/State_machine/state_machine.gd" id="1_irr8o"]
+[ext_resource type="Script" uid="uid://dofeu1npqycva" path="res://Objects/Player/player_idle.gd" id="2_piayb"]
+[ext_resource type="Script" uid="uid://b2hr8n2p5jtto" path="res://Objects/Player/player_walk.gd" id="3_lw8mq"]
+[ext_resource type="Script" uid="uid://ratjfc6lqyx2" path="res://Objects/Player/player_parry.gd" id="4_403f5"]
+[ext_resource type="Script" uid="uid://xb55cplapo8f" path="res://Objects/Player/player_jump.gd" id="5_4kugp"]
+[ext_resource type="Script" uid="uid://cteikdw8tmxw0" path="res://Objects/Player/player_roll.gd" id="6_flexm"]
+[ext_resource type="Script" uid="uid://fyg72uwdecjs" path="res://Objects/Player/player_die.gd" id="7_uautv"]
+
+[node name="state_machine" type="Node"]
+script = ExtResource("1_irr8o")
+
+[node name="idle" type="Node" parent="."]
+script = ExtResource("2_piayb")
+
+[node name="walk" type="Node" parent="."]
+script = ExtResource("3_lw8mq")
+
+[node name="parry" type="Node" parent="."]
+script = ExtResource("4_403f5")
+
+[node name="jump" type="Node" parent="."]
+script = ExtResource("5_4kugp")
+
+[node name="roll" type="Node" parent="."]
+script = ExtResource("6_flexm")
+
+[node name="die" type="Node" parent="."]
+script = ExtResource("7_uautv")

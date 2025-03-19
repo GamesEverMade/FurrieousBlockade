@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://v5g7mogilqa3" path="res://scenes/hero.tscn" id="1_w2twt"]
 [ext_resource type="PackedScene" uid="uid://dcvfi2ssjt5eg" path="res://scenes/projectile.tscn" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://b1tbo7hvu36f7" path="res://scenes/enemy_light.tscn" id="3_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://nmt2cqemchjd" path="res://scenes/hud.tscn" id="3_pu3yx"]
 
 [node name="MainScene" type="Node2D"]
@@ -19,3 +20,6 @@ position = Vector2(689, 309)
 
 [node name="Projectile" parent="." instance=ExtResource("3_7ykc4")]
 position = Vector2(553, 463)
+
+[node name="EnemyLight" parent="." instance=ExtResource("3_pu3yx")]
+position = Vector2(158, 111)
