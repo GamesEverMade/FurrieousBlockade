@@ -5,6 +5,7 @@ extends Area2D
 
 func _ready() -> void:
 	attack_timer.start()
+	set_modulate(Color(0, 1, 0, 1))
 	pass
 
 func _on_area_entered(area: Area2D) -> void:
@@ -15,6 +16,4 @@ func _on_area_entered(area: Area2D) -> void:
 func _on_attack_timer_timeout() -> void:
 	var p = projectile.instantiate()
 	add_child(p)
-	
-
 	

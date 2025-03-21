@@ -33,7 +33,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="ParryCooldown" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.6
 one_shot = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
