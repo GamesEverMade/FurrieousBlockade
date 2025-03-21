@@ -1,11 +1,11 @@
 extends Area2D
-class_name Projectile
+class_name Bullet
 
-@onready var sprite: AnimatedSprite2D = $Sprite
 @onready var player: Player = GameManager.player
+@onready var sprite: AnimatedSprite2D = $Sprite
 
 @export var speed = 400
-@export var projectile_damage = 1
+@export var damage = 1
 var dir: Vector2
 var is_deflected = false
 

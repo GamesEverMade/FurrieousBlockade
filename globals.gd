@@ -21,7 +21,7 @@ class_name Globals
 @export var TEST_SCENE ="res://Objects/Levels/test_level.tscn"
 
 # ENEMIES DAMAGE 
-@export var PROJECTILE = "res://Objects/Enemies/projectile.tscn"
+@export var BULLET = "res://Objects/Enemies/bullet.tscn"
 
 # MENUS
 @export var MAIN_MENU = "res://Objects/Menus/main_menu.tscn"

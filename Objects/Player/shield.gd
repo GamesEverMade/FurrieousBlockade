@@ -68,8 +68,8 @@ func get_clamped_mouse_position() -> Vector2:
 
 func _on_area_entered(area: Area2D) -> void:
 	
-	var should_destroy = area.is_in_group('Projectiles') and state == State.default
-	var should_deflect = area.is_in_group('Projectiles') and state == State.parry and area.has_method('deflect')
+	var should_destroy = area.is_in_group('Bullet') and state == State.default
+	var should_deflect = area.is_in_group('Bullet') and state == State.parry and area.has_method('deflect')
 	
 	if should_deflect: 
 		area.deflect()

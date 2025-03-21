@@ -23,12 +23,12 @@ window/stretch/mode="viewport"
 
 [global_group]
 
-Projectiles=""
 Player=""
 Cure="cura"
 Boosts=""
 Enemies=""
 Shield=""
+Bullet=""
 
 [input]
 

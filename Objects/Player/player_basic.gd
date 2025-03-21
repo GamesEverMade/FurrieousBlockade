@@ -45,12 +45,12 @@ func move_player(_delta):
 	position += direction * speed * _delta
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group('Projectiles'):
-		life -= area.projectile_damage
+	if area.is_in_group('Bullet'):
+		life -= area.damage
 		print('Player life is now {0}'.format([life]))
 	
 	#if area.is_in_group('Cure'):
-		#life += area.projectile_damage
+		#life += area.bullet_damage
 		#print('Player life is now {0}'.format([life]))
 	
 	#if area.is_in_group('Boosts'):
