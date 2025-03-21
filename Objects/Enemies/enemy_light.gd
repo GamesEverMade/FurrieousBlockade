@@ -1,5 +1,5 @@
 extends Area2D
-@onready var sprite: AnimatedSprite2D = $Sprite
+#@onready var sprite: AnimatedSprite2D = $Sprite
 @onready var attack_timer: Timer = $AttackTimer
 @export var projectile : PackedScene
 
