@@ -4,18 +4,20 @@ class_name Bullet
 @onready var player: Player = GameManager.player
 @onready var sprite: AnimatedSprite2D = $Sprite
 
-@export var speed = 400
-@export var damage = 1
+var speed = 400
+var damage = 1
 var dir: Vector2
 var is_deflected = false
 
 func set_direction_to_player():
 	dir = player.global_position - global_position
 	dir = dir.normalized()
+	rotate(dir.angle()-PI)
 	#print('Player position is {0} and enemy position is {1}'.format([player.global_position, global_position]))
 
 func deflect():
 	dir = -dir
+	rotate(PI)
 	is_deflected = true
 
 func _ready() -> void:

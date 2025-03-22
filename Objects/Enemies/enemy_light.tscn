@@ -21,6 +21,7 @@ size = Vector2(97, 72)
 script = ExtResource("1_rrtlb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0.973778, 0.882664, 0.600636, 1)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_7y3oy")
 

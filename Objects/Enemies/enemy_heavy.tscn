@@ -23,6 +23,7 @@ bullet_speed = 200.0
 damage = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0.59589, 0.615192, 0.938223, 1)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_d0yid")
 
