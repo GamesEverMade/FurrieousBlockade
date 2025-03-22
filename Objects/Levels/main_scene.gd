@@ -4,6 +4,7 @@ class_name Levels
 @onready var player = $Hero
 @onready var hud = $CanvasGroup/hud
 @onready var grid: AnimatedSprite2D = $Grid
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @export var grid_speed: float
 
 func _ready() -> void:

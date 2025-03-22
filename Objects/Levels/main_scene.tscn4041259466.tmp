@@ -1,4 +1,3 @@
-
 [gd_scene load_steps=16 format=3 uid="uid://buog32t2oj81d"]
 
 [ext_resource type="Script" uid="uid://ddavnrlvgtt31" path="res://Objects/Levels/main_scene.gd" id="1_384xt"]
@@ -6,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://nmt2cqemchjd" path="res://Objects/UI/hud.tscn" id="2_dstxs"]
 [ext_resource type="PackedScene" uid="uid://v5g7mogilqa3" path="res://Objects/Player/player.tscn" id="3_dcom4"]
 [ext_resource type="Texture2D" uid="uid://dav3onuiop0lq" path="res://assets/backgrounds/GridStartA.png" id="4_dik4f"]
-
-[ext_resource type="PackedScene" uid="uid://cp1qybiak2ips" path="res://Objects/Enemies/enemy_heavy.tscn" id="4_ldu42"]
+[ext_resource type="PackedScene" uid="uid://bxl6hvv51nj4p" path="res://Objects/Items/health.tscn" id="5_4dqbf"]
+[ext_resource type="PackedScene" uid="uid://bxyvwukah0k7o" path="res://Objects/Items/boost.tscn" id="5_dstxs"]
 [ext_resource type="Texture2D" uid="uid://cni4yy7h2u5ix" path="res://assets/backgrounds/GridStartB.png" id="5_ohmpn"]
 [ext_resource type="Texture2D" uid="uid://8tnv6eli42ry" path="res://assets/backgrounds/GridStartC.png" id="6_n48da"]
 [ext_resource type="Texture2D" uid="uid://gi7j04in0c6s" path="res://assets/backgrounds/StartSky.png" id="7_bui70"]
@@ -81,17 +80,18 @@ position = Vector2(639, 250)
 sprite_frames = SubResource("SpriteFrames_f4wem")
 
 [node name="Obstacle1" parent="." instance=ExtResource("9_6ybn2")]
-position = Vector2(1444, 342)
+position = Vector2(1011, -208)
 
 [node name="Hero" parent="." instance=ExtResource("3_dcom4")]
 position = Vector2(640, 360)
-speed = 500.0
-life = 7
-boosts = 1
-obstacle_collision_threshold = 10
 
-[node name="EnemyLight" parent="." node_paths=PackedStringArray("audio_stream_player") instance=ExtResource("7_dcom4")]
+[node name="Boost" parent="." instance=ExtResource("5_dstxs")]
+position = Vector2(1101, 428)
+
+[node name="Health" parent="." instance=ExtResource("5_4dqbf")]
+position = Vector2(348, 534)
+
+[node name="EnemyLight" parent="." instance=ExtResource("7_dcom4")]
 position = Vector2(121, 205)
-audio_stream_player = NodePath("../AudioStreamPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

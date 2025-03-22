@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://514gv2uilufp"
+path="res://.godot/imported/Menu Click by Audley_Fergine.mp3-813ef6f2eeb5a959e3a9fa286b43d5f1.mp3str"
+
+[deps]
+
+source_file="res://sfx/Menu Click by Audley_Fergine.mp3"
+dest_files=["res://.godot/imported/Menu Click by Audley_Fergine.mp3-813ef6f2eeb5a959e3a9fa286b43d5f1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
