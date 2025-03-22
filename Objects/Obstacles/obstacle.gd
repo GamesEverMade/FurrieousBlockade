@@ -11,6 +11,7 @@ var z: float = 500 # Obstacle spawns far away
 @export var scaling_factor: float = 5 
 @export var min_scaling: float = 0 
 @export var max_scaling: float = 2 # Biggest scaling the object will ever have on screen
+@export var damage = 1
 
 func _ready() -> void:
 	scale = Vector2.ZERO
@@ -18,6 +19,7 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
+	print(z)
 	z += z_speed * delta
 	scale = get_scale_from_z()
 	position = get_position_from_z()

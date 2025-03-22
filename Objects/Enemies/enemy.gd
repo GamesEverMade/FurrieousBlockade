@@ -8,6 +8,8 @@ extends Area2D
 @export var explosao:AudioStream
 @export var tiro:AudioStream
 
+@export var bullet_color:Color
+
 func _ready() -> void:
 	attack_timer.start()
 	pass
@@ -18,6 +20,7 @@ func fire_bullet(_origin, _speed = null, _damage = null):
 	if _speed  != null: b.speed = _speed
 	if _damage != null: b.damage = _damage
 	b.global_position = _origin
+	b.modulate = bullet_color
 	return b
 
 func _on_area_entered(area: Area2D) -> void:
