@@ -54,6 +54,7 @@ texture = ExtResource("1_ahhtf")
 stretch_mode = 4
 
 [node name="boost_level" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -68,6 +69,7 @@ grow_vertical = 2
 text = "x 00"
 
 [node name="boost_1" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 11.0
 offset_top = 27.0

@@ -24,16 +24,16 @@ offset_right = 11.0
 offset_bottom = 6.0
 
 [node name="Hero" parent="." instance=ExtResource("3_dcom4")]
-position = Vector2(689, 309)
+position = Vector2(640, 360)
 
 [node name="Boost" parent="." instance=ExtResource("5_dstxs")]
 position = Vector2(1101, 428)
 
 [node name="Health" parent="." instance=ExtResource("5_4dqbf")]
-position = Vector2(1007, 625)
+position = Vector2(348, 534)
 
 [node name="EnemyHeavy" parent="." instance=ExtResource("4_ldu42")]
-position = Vector2(1198, 105)
+position = Vector2(1170, 77)
 
 [node name="EnemyLight" parent="." instance=ExtResource("7_dcom4")]
-position = Vector2(332, 301)
+position = Vector2(132, 221)

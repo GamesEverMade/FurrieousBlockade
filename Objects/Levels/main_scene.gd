@@ -28,5 +28,5 @@ func _text_alert_update(_delta):
 			hud.update_status_label("Never been soo bad in my whole life...")
 		1: 
 			hud.update_status_label("AHHH... I'm gonna DIE HEREE")
-		0:
-			get_tree().change_scene_to_file(Globals.new().GAME_OVER_SCENE)
+	if life <= 0:
+		get_tree().change_scene_to_file(Globals.new().GAME_OVER_SCENE)
