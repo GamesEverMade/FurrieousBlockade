@@ -20,7 +20,8 @@ size = Vector2(97, 72)
 [node name="EnemyHeavy" type="Area2D" groups=["Enemies"]]
 script = ExtResource("1_d0yid")
 bullet_speed = 200.0
-damage = 4
+damage = 3
+bullet_color = Color(0.880789, 0.913664, 0.672847, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.59589, 0.615192, 0.938223, 1)

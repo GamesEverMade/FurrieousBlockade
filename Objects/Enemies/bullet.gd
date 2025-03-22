@@ -9,6 +9,8 @@ var damage = 1
 var dir: Vector2
 var is_deflected = false
 
+var margin = 30
+
 func set_direction_to_player():
 	dir = player.global_position - global_position
 	dir = dir.normalized()
@@ -29,4 +31,8 @@ func _process(delta: float) -> void:
 	destroy_if_out_of_bounds()
 
 func destroy_if_out_of_bounds():
-	pass
+	var viewport = get_viewport_rect().size
+	var is_out_of_bounds = global_position.x > viewport.x + margin || global_position.x < 0 - margin \
+	|| global_position.y > viewport.y + margin || global_position.y < 0 - margin
+	if is_out_of_bounds:
+		queue_free()

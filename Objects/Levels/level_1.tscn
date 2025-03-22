@@ -24,7 +24,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 13.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r1jmo"]
@@ -48,6 +48,7 @@ animations = [{
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_8ff0d")
+grid_speed = null
 
 [node name="CanvasGroup" type="CanvasLayer" parent="."]
 
@@ -61,13 +62,15 @@ offset_bottom = 6.0
 position = Vector2(640, 360)
 sprite_frames = SubResource("SpriteFrames_iy1ee")
 autoplay = "default"
+frame_progress = 0.189158
+flip_h = true
 
 [node name="Background" type="AnimatedSprite2D" parent="."]
 position = Vector2(640, 250)
 sprite_frames = SubResource("SpriteFrames_r1jmo")
 
 [node name="Hero" parent="." instance=ExtResource("8_1sysh")]
-position = Vector2(640, 360)
+position = Vector2(638, 412)
 
 [node name="EnemyLight" parent="." instance=ExtResource("9_vv8j1")]
-position = Vector2(121, 205)
+position = Vector2(129, 184)

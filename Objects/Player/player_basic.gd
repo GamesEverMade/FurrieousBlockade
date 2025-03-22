@@ -6,7 +6,6 @@ class_name Player
 ## This is the main character class script.
 ## Defines the properties and methods expected to be done by the Player.
 
-
 """
 Properties:
 Players properties
@@ -18,7 +17,17 @@ Players properties
 @export var speed: float = 500
 @export var life : int = 7
 @export var boosts : int = 1
+@export var obstacle_collision_threshold = 10
+
 @onready var player_sprite: AnimatedSprite2D = $player_sprite
+@onready var invul_timer: Timer = $invul_timer
+
+var margin = 0
+var state = State.default
+enum State{
+	default,
+	invul
+}
 
 """
 _ready:
@@ -37,24 +46,50 @@ The functions in this methods will run every frame.
 """
 func _process(_delta: float) -> void:
 	move_player(_delta)
+	if state == State.invul: 
+		blink_sprite()
+		return 
+	for area in get_overlapping_areas():
+		check_collision_with_obstacle(area)
+		check_collision_with_bullet(area)
+	
+func blink_sprite():
+	if Engine.get_frames_drawn() % 2 == 0:
+		player_sprite.self_modulate = Color(1, 0.5, 0.5, 0.5)
+	else: 
+		player_sprite.self_modulate = Color(1, 1, 1, 1)
+		
+func check_collision_with_obstacle(area):
+	if area.is_in_group('Obstacle'):
+		if area.z > 0 && area.z < obstacle_collision_threshold:
+			damage_player(area.damage)
+
+func check_collision_with_bullet(area):
+	if area.is_in_group('Bullet'):
+		damage_player(area.damage)
+
+func damage_player(damage : int):
+	life -= damage
+	state = State.invul
+	invul_timer.start()
+	print('Player life is now {0}'.format([life]))
+	
 	
 func move_player(_delta):
 	var x_direction = Input.get_axis("left", "right")
 	var y_direction = Input.get_axis("up", "down")
 	var direction = Vector2(x_direction, y_direction)  
-	position += direction * speed * _delta
+	
+	var new_position = position + direction.normalized() * speed * _delta
+	var viewport = get_viewport_rect().size
+	
+	var is_x_out_of_bounds = new_position.x > viewport.x + margin || new_position.x < 0 - margin 
+	var is_y_out_of_bounds = new_position.y > viewport.y + margin || new_position.y < 0 - margin
+	if !is_x_out_of_bounds:
+		position.x = new_position.x
+	if !is_y_out_of_bounds:
+		position.y = new_position.y
 
-func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group('Bullet'):
-		life -= area.damage
-		print('Player life is now {0}'.format([life]))
-	
-	#if area.is_in_group('Cure'):
-		#life += area.bullet_damage
-		#print('Player life is now {0}'.format([life]))
-	
-	#if area.is_in_group('Boosts'):
-		#print('Player boosts is now {0}'.format([boosts]))
-	#
-	#if area.is_in_group('Enemies'):
-		#print('Player life is now {0}'.format([life]))
+func _on_invul_timer_timeout() -> void:
+	state = State.default
+	player_sprite.self_modulate = Color (1, 1, 1, 1)

@@ -4,7 +4,6 @@ extends Levels
 func _ready() -> void:
 	pass
 	
-
 # Deixar esses controles de hud e vida em outro lugar de forma que todos os levels utilizem
 func _physics_process(_delta: float) -> void:
 	hud.update_health_label(player.life)
@@ -21,3 +20,6 @@ func _text_alert_update(_delta):
 # função que serve de script da fase
 # ao longo do tempo spawna inimigos e obstáculos
 # ex: if elapsed_time = 5: create enemy_light at pos(200,500) etc etc
+
+func level1():
+	spawn_enemy(time, position)

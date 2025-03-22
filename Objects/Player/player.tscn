@@ -253,9 +253,6 @@ animations = [{
 [node name="player" type="Area2D" groups=["Player"]]
 script = ExtResource("1_y2sko")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-enabled = false
-
 [node name="player_colision_shape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_7fttn")
@@ -266,12 +263,13 @@ sprite_frames = SubResource("SpriteFrames_3crbk")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="parry_timer" type="Timer" parent="."]
-
 [node name="die_timer" type="Timer" parent="."]
+
+[node name="invul_timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="Shield" parent="." instance=ExtResource("3_06baw")]
 z_index = 1
 scale = Vector2(0.7, 0.7)
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="invul_timer" to="." method="_on_invul_timer_timeout"]
