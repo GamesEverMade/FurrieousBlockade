@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bale7nv44bxy5"]
 
 [ext_resource type="Script" uid="uid://bvh86dithupul" path="res://Objects/Menus/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://bqur1njuwgvgn" path="res://assets/test_background/furry-artwork-wallpaper-preview.jpg" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://bqur1njuwgvgn" path="res://assets/backgrounds/furry-artwork-wallpaper-preview.jpg" id="2_ekxnf"]
 
 [sub_resource type="SystemFont" id="SystemFont_ekxnf"]
 font_names = PackedStringArray("Geneva")
