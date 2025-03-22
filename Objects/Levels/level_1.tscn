@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://bc31127l0nqe"]
+
+[ext_resource type="Script" uid="uid://d3weeduweh38s" path="res://Objects/Levels/level_1.gd" id="1_8ff0d"]
+[ext_resource type="PackedScene" uid="uid://nmt2cqemchjd" path="res://Objects/UI/hud.tscn" id="2_iykdu"]
+[ext_resource type="Texture2D" uid="uid://dav3onuiop0lq" path="res://assets/backgrounds/GridStartA.png" id="3_mdpwr"]
+[ext_resource type="Texture2D" uid="uid://cni4yy7h2u5ix" path="res://assets/backgrounds/GridStartB.png" id="4_vv8j1"]
+[ext_resource type="Texture2D" uid="uid://8tnv6eli42ry" path="res://assets/backgrounds/GridStartC.png" id="5_35jf0"]
+[ext_resource type="Texture2D" uid="uid://gi7j04in0c6s" path="res://assets/backgrounds/StartSky.png" id="6_brnxy"]
+[ext_resource type="Texture2D" uid="uid://dysk1agcrci54" path="res://assets/backgrounds/EndSky.png" id="7_dfuok"]
+[ext_resource type="PackedScene" uid="uid://v5g7mogilqa3" path="res://Objects/Player/player.tscn" id="8_1sysh"]
+[ext_resource type="PackedScene" uid="uid://b1tbo7hvu36f7" path="res://Objects/Enemies/enemy_light.tscn" id="9_vv8j1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iy1ee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mdpwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vv8j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_35jf0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r1jmo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_brnxy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_dfuok")
+}],
+"loop": true,
+"name": &"final",
+"speed": 5.0
+}]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_8ff0d")
+
+[node name="CanvasGroup" type="CanvasLayer" parent="."]
+
+[node name="hud" parent="CanvasGroup" instance=ExtResource("2_iykdu")]
+offset_left = 11.0
+offset_top = 6.0
+offset_right = 11.0
+offset_bottom = 6.0
+
+[node name="Grid" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_iy1ee")
+autoplay = "default"
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 250)
+sprite_frames = SubResource("SpriteFrames_r1jmo")
+
+[node name="Hero" parent="." instance=ExtResource("8_1sysh")]
+position = Vector2(640, 360)
+
+[node name="EnemyLight" parent="." instance=ExtResource("9_vv8j1")]
+position = Vector2(121, 205)
