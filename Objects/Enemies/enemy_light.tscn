@@ -21,11 +21,9 @@ size = Vector2(97, 72)
 
 [node name="EnemyLight" type="Area2D" groups=["Enemies"]]
 script = ExtResource("1_rrtlb")
-
 explosao = ExtResource("2_7y3oy")
 tiro = ExtResource("3_vnaxn")
 bullet_color = Color(1, 1, 1, 1)
-
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.973778, 0.882664, 0.600636, 1)

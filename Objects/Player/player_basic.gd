@@ -14,6 +14,7 @@ Players properties
 @param state_machine : Requires an State Machine Node that makes the management of the states.
 @param player_sprite : Requires
 """
+
 @export var speed: float = 500
 @export var life : int = 7
 @export var boosts : int = 1

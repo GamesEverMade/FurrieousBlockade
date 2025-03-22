@@ -2,12 +2,12 @@ extends Area2D
 
 @onready var attack_timer: Timer = $AttackTimer
 @onready var bullet = preload("res://Objects/Enemies/bullet.tscn")
-@export var audio_stream_player: AudioStreamPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
+
 @export var bullet_speed:float = 400
 @export var damage:int = 1
 @export var explosao:AudioStream
 @export var tiro:AudioStream
-
 @export var bullet_color:Color
 
 func _ready() -> void:
