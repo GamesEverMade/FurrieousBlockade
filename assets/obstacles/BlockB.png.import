@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpwb5wadneqi8"
-path="res://.godot/imported/BlockB.png-0d927038aef935bd107224e16caaff6a.ctex"
+path="res://.godot/imported/BlockB.png-7a6fd647e1776fd98868c8f9cf7fd95a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Obstacles/BlockB.png"
-dest_files=["res://.godot/imported/BlockB.png-0d927038aef935bd107224e16caaff6a.ctex"]
+source_file="res://assets/obstacles/BlockB.png"
+dest_files=["res://.godot/imported/BlockB.png-7a6fd647e1776fd98868c8f9cf7fd95a.ctex"]
 
 [params]
 

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnvfs02v5yckk"]
+
+[ext_resource type="Script" uid="uid://8nc8avqm20f0" path="res://Objects/Obstacles/obstacle.gd" id="1_s1o3t"]
+[ext_resource type="Texture2D" uid="uid://cpwb5wadneqi8" path="res://assets/obstacles/BlockB.png" id="2_s1o3t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v7k08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s1o3t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_4i50k"]
+points = PackedVector2Array(8, -249, -63, -163, -47, 174, -1, 233, 44, 258, 68, 228, 72, 186, 49, -234, 38, -262)
+
+[node name="Obstacle2" type="Area2D" groups=["Obstacle"]]
+script = ExtResource("1_s1o3t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v7k08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_4i50k")

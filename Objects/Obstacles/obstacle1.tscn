@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7uv0d3fcsex0"]
+
+[ext_resource type="Texture2D" uid="uid://dips33rr6ivln" path="res://assets/obstacles/BlockA.png" id="1_ascau"]
+[ext_resource type="Script" uid="uid://8nc8avqm20f0" path="res://Objects/Obstacles/obstacle.gd" id="1_rw2th"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v7k08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ascau")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_4i50k"]
+points = PackedVector2Array(124, -97, -36, -161, -116, -89, -141, -18, -102, 97, 3, 167, 133, 92, 150, -1)
+
+[node name="Obstacle1" type="Area2D" groups=["Obstacle"]]
+script = ExtResource("1_rw2th")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v7k08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_4i50k")

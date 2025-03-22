@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbiphicegewoc"
-path="res://.godot/imported/BlockC.png-44080a6f0165e8039f365b78170178ff.ctex"
+uid="uid://dips33rr6ivln"
+path="res://.godot/imported/BlockA.png-9221811ff98317729f43137b0171fd78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Obstacles/BlockC.png"
-dest_files=["res://.godot/imported/BlockC.png-44080a6f0165e8039f365b78170178ff.ctex"]
+source_file="res://assets/obstacles/BlockA.png"
+dest_files=["res://.godot/imported/BlockA.png-9221811ff98317729f43137b0171fd78.ctex"]
 
 [params]
 

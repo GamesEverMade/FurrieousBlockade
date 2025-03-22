@@ -254,6 +254,7 @@ animations = [{
 script = ExtResource("1_y2sko")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
 
 [node name="player_colision_shape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
