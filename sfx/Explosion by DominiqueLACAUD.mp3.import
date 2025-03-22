@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ipihtk2hxexs"
+path="res://.godot/imported/Explosion by DominiqueLACAUD.mp3-5e145cf880cd148a3ae261489fc2325a.mp3str"
+
+[deps]
+
+source_file="res://sfx/Explosion by DominiqueLACAUD.mp3"
+dest_files=["res://.godot/imported/Explosion by DominiqueLACAUD.mp3-5e145cf880cd148a3ae261489fc2325a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

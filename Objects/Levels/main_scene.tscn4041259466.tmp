@@ -91,8 +91,7 @@ position = Vector2(1101, 428)
 [node name="Health" parent="." instance=ExtResource("5_4dqbf")]
 position = Vector2(348, 534)
 
-[node name="EnemyLight" parent="." node_paths=PackedStringArray("audio_stream_player") instance=ExtResource("7_dcom4")]
+[node name="EnemyLight" parent="." instance=ExtResource("7_dcom4")]
 position = Vector2(121, 205)
-audio_stream_player = NodePath("../AudioStreamPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
