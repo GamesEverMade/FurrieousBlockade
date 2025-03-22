@@ -19,17 +19,17 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_dik4f")
-}, {
-"duration": 1.0,
 "texture": ExtResource("5_ohmpn")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_n48da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dik4f")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f4wem"]
@@ -67,12 +67,17 @@ offset_right = 11.0
 offset_bottom = 6.0
 
 [node name="Grid" type="AnimatedSprite2D" parent="."]
-position = Vector2(640, 360)
+z_index = -100
+position = Vector2(640, 502)
 sprite_frames = SubResource("SpriteFrames_k0w7i")
 autoplay = "default"
+frame = 2
+frame_progress = 0.406466
+offset = Vector2(0, -143.3)
 
 [node name="Background" type="AnimatedSprite2D" parent="."]
-position = Vector2(640, 250)
+z_index = -99
+position = Vector2(639, 250)
 sprite_frames = SubResource("SpriteFrames_f4wem")
 
 [node name="Obstacle1" parent="." instance=ExtResource("9_6ybn2")]
