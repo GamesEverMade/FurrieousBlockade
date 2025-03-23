@@ -3,6 +3,7 @@ class_name Bullet
 
 @onready var player: Player = GameManager.player
 @onready var sprite: AnimatedSprite2D = $Sprite
+@export var hit:AudioStream
 
 var speed = 400
 var damage = 1
