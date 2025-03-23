@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://winnuu3iqnax"
+path="res://.godot/imported/Block by Pixabay.mp3-dc4763fceb608507b2be5d8339b17877.mp3str"
+
+[deps]
+
+source_file="res://sfx/Block by Pixabay.mp3"
+dest_files=["res://.godot/imported/Block by Pixabay.mp3-dc4763fceb608507b2be5d8339b17877.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
