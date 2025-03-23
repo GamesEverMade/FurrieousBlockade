@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://chqquj8uni6oi"]
+
+[ext_resource type="Script" uid="uid://bg5hj0s8xmdf4" path="res://Objects/UI/tutorial.gd" id="1_7jiwa"]
+
+[node name="Tutorial" type="Control" node_paths=PackedStringArray("label", "timer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7jiwa")
+label = NodePath("Label")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 649.0
+offset_right = 921.0
+offset_bottom = 699.0
+theme_override_font_sizes/font_size = 30
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
