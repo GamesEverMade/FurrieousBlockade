@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dtjl3l80ninep" path="res://assets/hero/shield.png" id="2_g3emn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g3emn"]
-radius = 41.0122
+radius = 37.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ohv3a"]
 animations = [{
@@ -24,7 +24,7 @@ script = ExtResource("1_ohv3a")
 shape = SubResource("CircleShape2D_g3emn")
 
 [node name="ShieldAnimatedSprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.262182, 0.257936)
+scale = Vector2(0.22, 0.217)
 sprite_frames = SubResource("SpriteFrames_ohv3a")
 autoplay = "default"
 

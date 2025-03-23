@@ -23,9 +23,9 @@ status_label = NodePath("status_label")
 [node name="status_label" type="Label" parent="."]
 layout_mode = 1
 offset_left = 12.0
-offset_top = 48.0
+offset_top = 22.0
 offset_right = 174.0
-offset_bottom = 90.0
+offset_bottom = 64.0
 theme_override_fonts/font = SubResource("SystemFont_ahhtf")
 theme_override_font_sizes/font_size = 16
 text = "Fender's "

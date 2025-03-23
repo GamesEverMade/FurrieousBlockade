@@ -1,19 +1,31 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbxu7qtd1iltr"]
+[gd_scene load_steps=10 format=3 uid="uid://cbxu7qtd1iltr"]
 
 [ext_resource type="Script" uid="uid://wb8duf6wnbf7" path="res://Objects/Enemies/enemy.gd" id="1_wl7o2"]
 [ext_resource type="AudioStream" uid="uid://ipihtk2hxexs" path="res://sfx/Explosion by DominiqueLACAUD.mp3" id="2_vnaxn"]
 [ext_resource type="AudioStream" uid="uid://bd25muf4bysih" path="res://sfx/Laser Gun by Freesound_community.mp3" id="3_8rltw"]
+[ext_resource type="Texture2D" uid="uid://c6kby4hbues4b" path="res://assets/fx/A.png" id="4_oj6wk"]
 [ext_resource type="Texture2D" uid="uid://d0m8s4wdqc4c8" path="res://assets/enemies/bat.png" id="4_vnaxn"]
+[ext_resource type="Texture2D" uid="uid://ddgvp6acxm2wb" path="res://assets/fx/B.png" id="5_0r2ha"]
+[ext_resource type="Texture2D" uid="uid://dd8uaiaixwoqs" path="res://assets/fx/C.png" id="6_2ehi4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d0yid"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_oj6wk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0r2ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2ehi4")
+}, {
+"duration": 1.0,
 "texture": ExtResource("4_vnaxn")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhej5"]
@@ -21,6 +33,7 @@ size = Vector2(103.5, 65)
 
 [node name="EnemyLight" type="Area2D" groups=["Enemies"]]
 script = ExtResource("1_wl7o2")
+bullet_speed = 600.0
 explosion_sfx = ExtResource("2_vnaxn")
 shot_sfx = ExtResource("3_8rltw")
 bullet_color = Color(0.880789, 0.913664, 0.672847, 1)
@@ -29,6 +42,9 @@ bullet_color = Color(0.880789, 0.913664, 0.672847, 1)
 self_modulate = Color(0.59589, 0.615192, 0.938223, 1)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_d0yid")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.25, -0.5)
