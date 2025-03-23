@@ -9,7 +9,7 @@ var labels = [
 	"welcome to Unleash the Sun!",
 	"Fender, the defender needs your help!", 
 	"The Evil Batwigs blocked the sunlight, For its evil purposes!", 
-	"Help us guiding Fender to Unliesh the sun!", 
+	"Help us guiding Fender to unleash the sun!", 
 	"Use 'W', 'S', or 'Up Arrow' and 'Down arrow' keys to move Up and Down.", 
 	"Use 'A', 'D', or 'Left Arrow' and 'Right arrow' keys to move Left and Right.", 
 	"Fender is equiped with a Pawn Shield, use the mouse to move it in order to block", 
@@ -20,17 +20,21 @@ var labels = [
 	"GOOD LUCK!!!"
 	]
 
-var current_item = 0
+var current_item :int
 
 func _ready():
-	label.text = labels[0]
-	timer.start()
-
-func _physics_process(_delta: float) -> void:
-	label.text = labels[current_item]
+		# Exibe a primeira mensagem
+	update_label()
 	timer.wait_time = 3
 	timer.start()
 
+func update_label():
+	label.text = labels[current_item]
+
 func _on_timer_timeout() -> void:
-	if current_item < labels.size():
+	if current_item < labels.size() - 1:
 		current_item += 1
+		update_label()
+	else:
+		label.visible = false
+		timer.stop()

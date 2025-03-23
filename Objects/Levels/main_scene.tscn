@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://buog32t2oj81d"]
+[gd_scene load_steps=14 format=3 uid="uid://buog32t2oj81d"]
 
 [ext_resource type="Script" uid="uid://ddavnrlvgtt31" path="res://Objects/Levels/main_scene.gd" id="1_384xt"]
 [ext_resource type="Script" uid="uid://cjpsi65msxyfn" path="res://game_manager.gd" id="2_76pxp"]
 [ext_resource type="PackedScene" uid="uid://nmt2cqemchjd" path="res://Objects/UI/hud.tscn" id="2_dstxs"]
+[ext_resource type="PackedScene" uid="uid://chqquj8uni6oi" path="res://Objects/UI/tutorial.tscn" id="3_22yhk"]
 [ext_resource type="PackedScene" uid="uid://v5g7mogilqa3" path="res://Objects/Player/player.tscn" id="3_dcom4"]
 [ext_resource type="Texture2D" uid="uid://dav3onuiop0lq" path="res://assets/backgrounds/GridStartA.png" id="4_dik4f"]
 [ext_resource type="Texture2D" uid="uid://cni4yy7h2u5ix" path="res://assets/backgrounds/GridStartB.png" id="5_ohmpn"]
@@ -55,6 +56,8 @@ grid_speed = 0.5
 script = ExtResource("2_76pxp")
 
 [node name="CanvasGroup" type="CanvasLayer" parent="."]
+
+[node name="Tutorial" parent="CanvasGroup" instance=ExtResource("3_22yhk")]
 
 [node name="hud" parent="CanvasGroup" instance=ExtResource("2_dstxs")]
 offset_left = 11.0

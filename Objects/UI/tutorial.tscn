@@ -21,7 +21,7 @@ offset_left = 23.0
 offset_top = 649.0
 offset_right = 921.0
 offset_bottom = 699.0
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 30
 text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
