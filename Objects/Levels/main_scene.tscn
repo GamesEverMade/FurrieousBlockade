@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://buog32t2oj81d"]
+[gd_scene load_steps=13 format=3 uid="uid://buog32t2oj81d"]
 
 [ext_resource type="Script" uid="uid://ddavnrlvgtt31" path="res://Objects/Levels/main_scene.gd" id="1_384xt"]
 [ext_resource type="Script" uid="uid://cjpsi65msxyfn" path="res://game_manager.gd" id="2_76pxp"]
@@ -9,10 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://8tnv6eli42ry" path="res://assets/backgrounds/GridStartC.png" id="6_n48da"]
 [ext_resource type="Texture2D" uid="uid://gi7j04in0c6s" path="res://assets/backgrounds/StartSky.png" id="7_bui70"]
 [ext_resource type="Texture2D" uid="uid://dysk1agcrci54" path="res://assets/backgrounds/EndSky.png" id="8_5aei3"]
-[ext_resource type="PackedScene" uid="uid://b7uv0d3fcsex0" path="res://Objects/Obstacles/obstacle1.tscn" id="9_6ybn2"]
 [ext_resource type="AudioStream" uid="uid://bdqugi732drd3" path="res://sfx/Hit Effect by Driken5482.mp3" id="11_0nffa"]
-[ext_resource type="PackedScene" uid="uid://cp1qybiak2ips" path="res://Objects/Enemies/enemy_heavy.tscn" id="13_db77a"]
-
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0w7i"]
 animations = [{
@@ -86,8 +83,7 @@ hit = ExtResource("11_0nffa")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 max_polyphony = 15
 
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 0.001

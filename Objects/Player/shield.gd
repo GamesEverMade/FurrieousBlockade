@@ -76,9 +76,9 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	if should_deflect: 
 		area.deflect()
-		Globals.new().tocar_audio(audio_stream_player, parry_sound, -3, 0.8, 1.2)
+		Globals.new().play_audio(audio_stream_player, parry_sound, -3, 0.8, 1.2)
 	elif should_destroy: 
-		Globals.new().tocar_audio(audio_stream_player, block_sound, -3, 0.8, 1.2)
+		Globals.new().play_audio(audio_stream_player, block_sound, -3, 0.8, 1.2)
 		area.queue_free()
 
 func _on_parry_timer_timeout() -> void:
