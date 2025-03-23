@@ -26,10 +26,10 @@ texture = ExtResource("2_ekxnf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-offset_left = 74.0
-offset_top = 149.0
-offset_right = 445.0
-offset_bottom = 316.0
+offset_left = 11.0
+offset_top = 106.0
+offset_right = 382.0
+offset_bottom = 273.0
 scale = Vector2(3, 3)
 
 [node name="title" type="Label" parent="MarginContainer"]
@@ -46,8 +46,11 @@ text = "Furrieous Brake Blockade"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_constants/separation = 4
+theme_override_constants/separation = 8
 alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
