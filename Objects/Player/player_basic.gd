@@ -72,7 +72,7 @@ func check_collision_with_bullet(area):
 		area.queue_free()
 
 func damage_player(damage : int):
-	Globals.new().tocar_audio(audio_stream_player, hit, 10, 0.8, 1.2)
+	Globals.new().play_audio(audio_stream_player, hit, 10, 0.8, 1.2)
 	life -= damage
 	state = State.invul
 	invul_timer.start()
