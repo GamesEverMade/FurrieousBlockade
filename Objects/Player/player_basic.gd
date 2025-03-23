@@ -19,7 +19,8 @@ Players properties
 @export var life : int = 7
 @export var boosts : int = 1
 @export var obstacle_collision_threshold = 10
-
+@export var hit:AudioStream
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
 @onready var player_sprite: AnimatedSprite2D = $player_sprite
 @onready var invul_timer: Timer = $invul_timer
 
@@ -68,13 +69,14 @@ func check_collision_with_obstacle(area):
 func check_collision_with_bullet(area):
 	if area.is_in_group('Bullet'):
 		damage_player(area.damage)
+		area.queue_free()
 
 func damage_player(damage : int):
+	Globals.new().tocar_audio(audio_stream_player, hit, 10, 0.8, 1.2)
 	life -= damage
 	state = State.invul
 	invul_timer.start()
 	print('Player life is now {0}'.format([life]))
-	
 	
 func move_player(_delta):
 	var x_direction = Input.get_axis("left", "right")

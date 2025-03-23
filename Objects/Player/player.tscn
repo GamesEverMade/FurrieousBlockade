@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://v5g7mogilqa3"]
+[gd_scene load_steps=40 format=3 uid="uid://v5g7mogilqa3"]
 
 [ext_resource type="Script" uid="uid://diopgnpoybday" path="res://Objects/Player/player_basic.gd" id="1_y2sko"]
 [ext_resource type="PackedScene" uid="uid://iav25jbeqhs" path="res://Objects/Player/shield.tscn" id="3_06baw"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b3aw1bkmv46vq" path="res://assets/hero/cat.png" id="3_u7612"]
 [ext_resource type="Texture2D" uid="uid://f1c258bofjh7" path="res://assets/hero/Sword_attack_full.png" id="4_8adtx"]
 [ext_resource type="Texture2D" uid="uid://dj7o804d6eyvk" path="res://assets/hero/Sword_Walk_full.png" id="5_0am28"]
+[ext_resource type="AudioStream" uid="uid://winnuu3iqnax" path="res://sfx/Block by Pixabay.mp3" id="7_jllbl"]
+[ext_resource type="AudioStream" uid="uid://d2wqgbgcfrrna" path="res://sfx/Parry by VoiceBosch.mp3" id="8_0mj7g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7fttn"]
 radius = 34.0
@@ -252,6 +254,7 @@ animations = [{
 
 [node name="player" type="Area2D" groups=["Player"]]
 script = ExtResource("1_y2sko")
+life = 9
 
 [node name="player_colision_shape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
@@ -269,7 +272,12 @@ autoplay = "idle"
 one_shot = true
 
 [node name="Shield" parent="." instance=ExtResource("3_06baw")]
-z_index = 1
+z_index = 2
 scale = Vector2(0.7, 0.7)
+block_sound = ExtResource("7_jllbl")
+parry_sound = ExtResource("8_0mj7g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 10
 
 [connection signal="timeout" from="invul_timer" to="." method="_on_invul_timer_timeout"]

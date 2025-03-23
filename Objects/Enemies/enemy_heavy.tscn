@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cp1qybiak2ips"]
+[gd_scene load_steps=7 format=3 uid="uid://cp1qybiak2ips"]
 
 [ext_resource type="Script" uid="uid://wb8duf6wnbf7" path="res://Objects/Enemies/enemy.gd" id="1_d0yid"]
+[ext_resource type="AudioStream" uid="uid://ipihtk2hxexs" path="res://sfx/Explosion by DominiqueLACAUD.mp3" id="2_863d4"]
+[ext_resource type="AudioStream" uid="uid://bd25muf4bysih" path="res://sfx/Laser Gun by Freesound_community.mp3" id="3_5ajuw"]
 [ext_resource type="Texture2D" uid="uid://d0m8s4wdqc4c8" path="res://assets/enemies/bat.png" id="3_lm447"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d0yid"]
@@ -19,8 +21,10 @@ size = Vector2(97, 72)
 
 [node name="EnemyHeavy" type="Area2D" groups=["Enemies"]]
 script = ExtResource("1_d0yid")
-bullet_speed = 200.0
-damage = 3
+bullet_speed = 250.0
+damage = 2
+explosao = ExtResource("2_863d4")
+tiro = ExtResource("3_5ajuw")
 bullet_color = Color(0.880789, 0.913664, 0.672847, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcvfi2ssjt5eg"]
+[gd_scene load_steps=6 format=3 uid="uid://dcvfi2ssjt5eg"]
 
 [ext_resource type="Script" uid="uid://wmfod4csv8oh" path="res://Objects/Enemies/bullet.gd" id="1_q3m7n"]
+[ext_resource type="AudioStream" uid="uid://bdqugi732drd3" path="res://sfx/Hit Effect by Driken5482.mp3" id="2_dhch0"]
 [ext_resource type="Texture2D" uid="uid://c6jnxwa6tpffs" path="res://assets/fx/Projectil3.png" id="2_iv7gu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rimnf"]
@@ -19,6 +20,7 @@ points = PackedVector2Array(-29, 0, 8, -16, 30, -5, 30, 5, 9, 16)
 
 [node name="Projectile" type="Area2D" groups=["Bullet"]]
 script = ExtResource("1_q3m7n")
+hit = ExtResource("2_dhch0")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.4, 0.4)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://buog32t2oj81d"]
+[gd_scene load_steps=16 format=3 uid="uid://buog32t2oj81d"]
 
 [ext_resource type="Script" uid="uid://ddavnrlvgtt31" path="res://Objects/Levels/main_scene.gd" id="1_384xt"]
 [ext_resource type="Script" uid="uid://cjpsi65msxyfn" path="res://game_manager.gd" id="2_76pxp"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b1tbo7hvu36f7" path="res://Objects/Enemies/enemy_light.tscn" id="7_dcom4"]
 [ext_resource type="Texture2D" uid="uid://dysk1agcrci54" path="res://assets/backgrounds/EndSky.png" id="8_5aei3"]
 [ext_resource type="PackedScene" uid="uid://b7uv0d3fcsex0" path="res://Objects/Obstacles/obstacle1.tscn" id="9_6ybn2"]
+[ext_resource type="AudioStream" uid="uid://bdqugi732drd3" path="res://sfx/Hit Effect by Driken5482.mp3" id="11_0nffa"]
+[ext_resource type="PackedScene" uid="uid://cp1qybiak2ips" path="res://Objects/Enemies/enemy_heavy.tscn" id="13_db77a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0w7i"]
 animations = [{
@@ -82,8 +84,13 @@ position = Vector2(1444, 342)
 
 [node name="Hero" parent="." instance=ExtResource("3_dcom4")]
 position = Vector2(640, 360)
-
-[node name="EnemyLight" parent="." instance=ExtResource("7_dcom4")]
-position = Vector2(121, 205)
+hit = ExtResource("11_0nffa")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 15
+
+[node name="EnemyLight" parent="." instance=ExtResource("7_dcom4")]
+position = Vector2(1059, 77)
+
+[node name="EnemyHeavy" parent="." instance=ExtResource("13_db77a")]
+position = Vector2(157, 299)

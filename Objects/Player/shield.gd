@@ -11,6 +11,9 @@ class_name Shield
 @param player : Expect the reference for the player.
 """
 @export var clamp_radius:float = 150
+@export var block_sound:AudioStream
+@export var parry_sound:AudioStream
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
 @onready var player: Player = $".."
 @onready var parry_timer: Timer = $ParryTimer
 @onready var parry_cooldown: Timer = $ParryCooldown
@@ -73,7 +76,9 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	if should_deflect: 
 		area.deflect()
+		Globals.new().tocar_audio(audio_stream_player, parry_sound, -3, 0.8, 1.2)
 	elif should_destroy: 
+		Globals.new().tocar_audio(audio_stream_player, block_sound, -3, 0.8, 1.2)
 		area.queue_free()
 
 func _on_parry_timer_timeout() -> void:

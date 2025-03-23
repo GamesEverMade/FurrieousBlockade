@@ -21,6 +21,7 @@ size = Vector2(97, 72)
 
 [node name="EnemyLight" type="Area2D" groups=["Enemies"]]
 script = ExtResource("1_rrtlb")
+bullet_speed = 450.0
 explosao = ExtResource("2_7y3oy")
 tiro = ExtResource("3_vnaxn")
 bullet_color = Color(1, 1, 1, 1)
