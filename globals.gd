@@ -28,8 +28,8 @@ var rng = RandomNumberGenerator.new()
 @export var MAIN_MENU = "res://Objects/Menus/main_menu.tscn"
 @export var OPTIONS_MENU = "res://Objects/Menus/options_menu.tscn"
 
-func tocar_audio(audio_stream_player:AudioStreamPlayer, arquivo:AudioStream, volume:float, pitch_min:float, pitch_max:float):
-	audio_stream_player.stream = arquivo
+func play_audio(audio_stream_player:AudioStreamPlayer, file:AudioStream, volume:float, pitch_min:float, pitch_max:float):
+	audio_stream_player.stream = file
 	audio_stream_player.volume_db = volume
 	audio_stream_player.set_pitch_scale(rng.randf_range(pitch_min, pitch_max))
 	audio_stream_player.play()
