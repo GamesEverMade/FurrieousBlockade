@@ -8,11 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://cni4yy7h2u5ix" path="res://assets/backgrounds/GridStartB.png" id="5_ohmpn"]
 [ext_resource type="Texture2D" uid="uid://8tnv6eli42ry" path="res://assets/backgrounds/GridStartC.png" id="6_n48da"]
 [ext_resource type="Texture2D" uid="uid://gi7j04in0c6s" path="res://assets/backgrounds/StartSky.png" id="7_bui70"]
-[ext_resource type="PackedScene" uid="uid://b1tbo7hvu36f7" path="res://Objects/Enemies/enemy_light.tscn" id="7_dcom4"]
 [ext_resource type="Texture2D" uid="uid://dysk1agcrci54" path="res://assets/backgrounds/EndSky.png" id="8_5aei3"]
 [ext_resource type="PackedScene" uid="uid://b7uv0d3fcsex0" path="res://Objects/Obstacles/obstacle1.tscn" id="9_6ybn2"]
 [ext_resource type="AudioStream" uid="uid://bdqugi732drd3" path="res://sfx/Hit Effect by Driken5482.mp3" id="11_0nffa"]
 [ext_resource type="PackedScene" uid="uid://cp1qybiak2ips" path="res://Objects/Enemies/enemy_heavy.tscn" id="13_db77a"]
+
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0w7i"]
 animations = [{
@@ -79,9 +79,6 @@ z_index = -99
 position = Vector2(639, 250)
 sprite_frames = SubResource("SpriteFrames_f4wem")
 
-[node name="Obstacle1" parent="." instance=ExtResource("9_6ybn2")]
-position = Vector2(1444, 342)
-
 [node name="Hero" parent="." instance=ExtResource("3_dcom4")]
 position = Vector2(640, 360)
 hit = ExtResource("11_0nffa")
@@ -89,8 +86,11 @@ hit = ExtResource("11_0nffa")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 max_polyphony = 15
 
-[node name="EnemyLight" parent="." instance=ExtResource("7_dcom4")]
-position = Vector2(1059, 77)
 
-[node name="EnemyHeavy" parent="." instance=ExtResource("13_db77a")]
-position = Vector2(157, 299)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
