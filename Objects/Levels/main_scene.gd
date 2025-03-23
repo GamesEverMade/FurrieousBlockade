@@ -9,7 +9,7 @@ class_name Levels
 @export var grid_speed: float
 
 const ENEMY_LIGHT = preload("res://Objects/Enemies/enemy_light.tscn")
-const ENEMY_HEAVY = preload("res://Objects/Enemies/enemy_heavy.tscn")
+const ENEMY_HY = preload("res://Objects/Enemies/enemy_heavy.tscn")
 const OBSTACLE_1 = preload("res://Objects/Obstacles/obstacle1.tscn")
 const OBSTACLE_2 = preload("res://Objects/Obstacles/obstacle2.tscn")
 const OBSTACLE_3 = preload("res://Objects/Obstacles/obstacle3.tscn")
