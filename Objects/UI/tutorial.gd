@@ -4,21 +4,18 @@ class_name tutorial_HUD
 # LABELS: Containing the Tutorial text
 @export var label : Label 
 @export var timer : Timer
+@onready var label_2: Label = $Label2
+
 
 var labels = [
-	"welcome to Unleash the Sun!",
-	"Fender, the defender needs your help!", 
-	"The Evil Batwigs blocked the sunlight, For its evil purposes!", 
-	"Help us guiding Fender to unleash the sun!", 
-	"Use 'W', 'S', or 'Up Arrow' and 'Down arrow' keys to move Up and Down.", 
-	"Use 'A', 'D', or 'Left Arrow' and 'Right arrow' keys to move Left and Right.", 
-	"Fender is equiped with a Pawn Shield, use the mouse to move it in order to block", 
-	"You can also parry the enemies attack, clicking the 'left mouse button'", 
-	"You must parry at the exact moment of the enemies attack touches your shield",
-	"Try to defeat all enemies you encounter, otherwise there will be many on screen", 
-	"They will also throw rocks on your direction, pay attention to not let it hit you.", 
-	"GOOD LUCK!!!"
-	]
+	"The Bat Country Syndicate has blocked out the Sun",
+	"In order to create an eternal night", 
+	"Push forward and Unlock the Sun!",
+	"MOUSE: move your shield to block attacks",
+	"LEFT MOUSE BUTTON to deflect projectiles back",
+	"W, A, S, D: movement",
+	"Be careful not to be overwhelmed by enemies"
+]
 
 var current_item :int
 
@@ -38,3 +35,6 @@ func _on_timer_timeout() -> void:
 	else:
 		label.visible = false
 		timer.stop()
+
+func update_win():
+	label_2.visible = true

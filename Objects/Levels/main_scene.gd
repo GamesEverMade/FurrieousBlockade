@@ -1,12 +1,16 @@
 extends Node2D
 class_name Levels
+@onready var main_scene: Levels = $"."
+@onready var hero: Player = $Hero
 @onready var globals : Globals
 @onready var player = $Hero
 @onready var hud = $CanvasGroup/hud
+@onready var tutorial: tutorial_HUD = $CanvasGroup/Tutorial
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var grid: AnimatedSprite2D = $Grid
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
+@onready var background: AnimatedSprite2D = $Background
 @export var grid_speed: float
 
 const ENEMY_LIGHT = preload("res://Objects/Enemies/enemy_light.tscn")
@@ -24,8 +28,8 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(100, 100),
 	"to": Vector2(100, 100),
 	"duration": 0.0
 	},
@@ -33,7 +37,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 5.0,
-	"from": Vector2(1380, -100),
+	"from": Vector2(1180, 100),
 	"to": Vector2(1180, 100),
 	"duration": 0.0
 	},
@@ -41,8 +45,8 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(100, 250),
 	"to": Vector2(100, 250),
 	"duration": 0.0
 	},
@@ -50,7 +54,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 5.0,
-	"from": Vector2(1380, -100),
+	"from": Vector2(1180, 250),
 	"to": Vector2(1180, 250),
 	"duration": 0.0
 	},
@@ -58,8 +62,8 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(100, 150),
 	"to": Vector2(100, 150),
 	"duration": 0.0
 	},
@@ -67,7 +71,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 5.0,
-	"from": Vector2(-100, 100),
+	"from": Vector2(100, 350),
 	"to": Vector2(100, 350),
 	"duration": 0.0
 	},
@@ -75,8 +79,8 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(1380, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(1200, 100),
 	"to": Vector2(1200, 100),
 	"duration": 0.0
 	},
@@ -84,7 +88,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 5.0,
-	"from": Vector2(1380, -100),
+	"from": Vector2(1200, 300),
 	"to": Vector2(1200, 300),
 	"duration": 0.0
 	},
@@ -92,8 +96,8 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(100, 100),
 	"to": Vector2(100, 100),
 	"duration": 0.0
 	},
@@ -101,7 +105,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 5.0,
-	"from": Vector2(1380, -100),
+	"from": Vector2(1180, 100),
 	"to": Vector2(1180, 100),
 	"duration": 0.0
 	},
@@ -109,8 +113,8 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(100, 250),
 	"to": Vector2(100, 250),
 	"duration": 0.0
 	},
@@ -118,7 +122,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 5.0,
-	"from": Vector2(1380, -100),
+	"from": Vector2(1180, 250),
 	"to": Vector2(1180, 250),
 	"duration": 0.0
 	},
@@ -126,16 +130,16 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(200, 250),
 	"to": Vector2(200, 250),
 	"duration": 0.0
 	},
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "heavy", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-640, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(640, 250),
 	"to": Vector2(640, 250),
 	"duration": 0.0
 	},
@@ -143,7 +147,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 6.0,
-	"from": Vector2(1380, -100),
+	"from": Vector2(1080, 250),
 	"to": Vector2(1080, 250),
 	"duration": 0.0
 	},
@@ -151,8 +155,8 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, 700),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(100, 650),
 	"to": Vector2(100, 650),
 	"duration": 0.0
 	},
@@ -160,7 +164,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 5.0,
-	"from": Vector2(1380, 700),
+	"from": Vector2(1180, 650),
 	"to": Vector2(1180, 650),
 	"duration": 0.0
 	},
@@ -168,8 +172,8 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(200, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(300, 100),
 	"to": Vector2(300, 100),
 	"duration": 0.0
 	},
@@ -177,7 +181,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 5.0,
-	"from": Vector2(200, -100),
+	"from": Vector2(400, 200),
 	"to": Vector2(400, 200),
 	"duration": 0.0
 	},
@@ -185,8 +189,8 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "heavy", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(100, 100),
 	"to": Vector2(100, 100),
 	"duration": 0.0
 	},
@@ -194,7 +198,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 5.0,
-	"from": Vector2(1380, -100),
+	"from": Vector2(1180, 200),
 	"to": Vector2(1180, 200),
 	"duration": 0.0
 	},
@@ -202,25 +206,25 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(1480, -100),
-	"to": Vector2(1580, 100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(1080, 100),
+	"to": Vector2(1080, 100),
 	"duration": 0.0
 	},
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 5.0,
-	"from": Vector2(1480, -100),
-	"to": Vector2(1680, 200),
+	"from": Vector2(1180, 200),
+	"to": Vector2(1180, 200),
 	"duration": 0.0
 	},
 	# WAVE 12
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(100, 100),
 	"to": Vector2(100, 100),
 	"duration": 0.0
 	},
@@ -228,7 +232,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "heavy", 
 	"next_spawn_delay": 5.0,
-	"from": Vector2(1380, -100),
+	"from": Vector2(1180, 200),
 	"to": Vector2(1180, 200),
 	"duration": 0.0
 	},
@@ -236,41 +240,41 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(1250, -100),
-	"to": Vector2(1250, 300),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(1150, 300),
+	"to": Vector2(1150, 300),
 	"duration": 0.0
 	},
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 0.0,
-	"from": Vector2(1250, -100),
-	"to": Vector2(1250, 450),
+	"from": Vector2(1150, 450),
+	"to": Vector2(1150, 450),
 	"duration": 0.0
 	},
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 6.0,
-	"from": Vector2(1250, -100),
-	"to": Vector2(1250, 600),
+	"from": Vector2(1150, 600),
+	"to": Vector2(1150, 600),
 	"duration": 0.0
 	},
 	# WAVE 14
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(150, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(150, 300),
 	"to": Vector2(150, 300),
 	"duration": 0.0
 	},
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(150, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(150, 450),
 	"to": Vector2(150, 450),
 	"duration": 0.0
 	},
@@ -278,7 +282,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 6.0,
-	"from": Vector2(150, -100),
+	"from": Vector2(150, 600),
 	"to": Vector2(150, 600),
 	"duration": 0.0
 	},
@@ -286,8 +290,8 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "heavy", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, 600),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(500, 200),
 	"to": Vector2(500, 200),
 	"duration": 0.0
 	},
@@ -295,7 +299,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "heavy", 
 	"next_spawn_delay": 5.0,
-	"from": Vector2(1380, 600),
+	"from": Vector2(700, 200),
 	"to": Vector2(700, 200),
 	"duration": 0.0
 	},
@@ -303,16 +307,16 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, 0),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(200, 100),
 	"to": Vector2(200, 100),
 	"duration": 0.0
 	},
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "heavy", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, 100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(150, 200),
 	"to": Vector2(150, 200),
 	"duration": 0.0
 	},
@@ -320,7 +324,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 6.0,
-	"from": Vector2(-100, 200),
+	"from": Vector2(100, 300),
 	"to": Vector2(100, 300),
 	"duration": 0.0
 	},
@@ -328,16 +332,16 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(1380, 0),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(1180, 100),
 	"to": Vector2(1180, 100),
 	"duration": 0.0
 	},
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "heavy", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(1380, 0),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(1080, 100),
 	"to": Vector2(1080, 100),
 	"duration": 0.0
 	},
@@ -345,7 +349,7 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 6.0,
-	"from": Vector2(1080, 200),
+	"from": Vector2(980, 300),
 	"to": Vector2(980, 300),
 	"duration": 0.0
 	},
@@ -353,24 +357,24 @@ var level1 = [
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "heavy", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(100, 150),
 	"to": Vector2(100, 150),
 	"duration": 0.0
 	},
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-100, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(200, 250),
 	"to": Vector2(200, 250),
 	"duration": 0.0
 	},
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "heavy", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(-640, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(640, 250),
 	"to": Vector2(640, 250),
 	"duration": 0.0
 	},
@@ -378,15 +382,15 @@ var level1 = [
 	"spawn_type": "enemy", 
 	"enemy_type": "light", 
 	"next_spawn_delay": 6.0,
-	"from": Vector2(1380, -100),
+	"from": Vector2(1080, 250),
 	"to": Vector2(1080, 250),
 	"duration": 0.0
 	},
 	{
 	"spawn_type": "enemy", 
 	"enemy_type": "heavy", 
-	"next_spawn_delay": 0.0,
-	"from": Vector2(1380, -100),
+	"next_spawn_delay": 0.1,
+	"from": Vector2(1180, 350),
 	"to": Vector2(1180, 350),
 	"duration": 0.0
 	},
@@ -397,9 +401,9 @@ Expected dictionary for obstacles:
 	{
 		"spawn_type": "obstacle", 
 		"obstacle": 1, 
-		"next_spawn_delay: 1.0,
+		"next_spawn_delay": 1.0,
 		"pos_3d": Vector2(40, 50),
-		"z" : 500
+		"z": 500
 	}
 """
 #var level2 = {
@@ -415,7 +419,7 @@ var levels = [
 
 func _ready() -> void:
 	level = levels[level_index]
-	spawn_timer.wait_time = 1
+	spawn_timer.wait_time = 19
 	spawn_timer.start()
 	
 	music_player.stream = preload("res://music/top synth.mp3")
@@ -460,8 +464,19 @@ func _process(_delta: float) -> void:
 	hud.update_health_label(player.life)
 	hud.update_boost_label(player.boosts)
 	_text_alert_update(_delta)
-	grid_speed += 0.1 * _delta
+	grid_speed += 0.01 * _delta
 	grid.speed_scale = grid_speed
+	if level.is_empty():
+		var children_list = main_scene.get_children()
+		var has_enemies = false
+		for child in children_list:
+			if child.is_in_group("Enemies"):
+				has_enemies = true
+				break
+		if not has_enemies:
+			background.play("final")
+			grid.play("final")
+			tutorial.update_win()
 
 func _text_alert_update(_delta):
 	var life = player.life

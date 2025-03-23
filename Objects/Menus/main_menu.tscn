@@ -33,6 +33,7 @@ offset_bottom = 287.0
 scale = Vector2(3, 3)
 
 [node name="title" type="Label" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
