@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bc4omnm4um3yi"]
 
 [ext_resource type="Script" uid="uid://ck8clpw0fnhei" path="res://Objects/Levels/game_over.gd" id="1_wqhvx"]
-[ext_resource type="Texture2D" uid="uid://dliibpmlxj0ys" path="res://assets/backgrounds/game_over.jpg" id="1_xeevv"]
+[ext_resource type="Texture2D" uid="uid://djgsu6yf0604f" path="res://assets/backgrounds/menu.png" id="2_ovpqk"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_xeevv")
+texture = ExtResource("2_ovpqk")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

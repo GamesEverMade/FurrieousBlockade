@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://buog32t2oj81d"]
+[gd_scene load_steps=14 format=3 uid="uid://buog32t2oj81d"]
 
 [ext_resource type="Script" uid="uid://ddavnrlvgtt31" path="res://Objects/Levels/main_scene.gd" id="1_384xt"]
 [ext_resource type="Script" uid="uid://cjpsi65msxyfn" path="res://game_manager.gd" id="2_76pxp"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://gi7j04in0c6s" path="res://assets/backgrounds/StartSky.png" id="7_bui70"]
 [ext_resource type="Texture2D" uid="uid://dysk1agcrci54" path="res://assets/backgrounds/EndSky.png" id="8_5aei3"]
 [ext_resource type="AudioStream" uid="uid://bdqugi732drd3" path="res://sfx/Hit Effect by Driken5482.mp3" id="11_0nffa"]
+[ext_resource type="AudioStream" uid="uid://dv6cpp0uw6rjq" path="res://music/top-synth.ogg" id="11_22yhk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0w7i"]
 animations = [{
@@ -84,6 +85,12 @@ hit = ExtResource("11_0nffa")
 max_polyphony = 15
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_22yhk")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 0.001

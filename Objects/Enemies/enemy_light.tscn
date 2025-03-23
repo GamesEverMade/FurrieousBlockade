@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://wb8duf6wnbf7" path="res://Objects/Enemies/enemy.gd" id="1_wl7o2"]
 [ext_resource type="AudioStream" uid="uid://ipihtk2hxexs" path="res://sfx/Explosion by DominiqueLACAUD.mp3" id="2_vnaxn"]
 [ext_resource type="AudioStream" uid="uid://bd25muf4bysih" path="res://sfx/Laser Gun by Freesound_community.mp3" id="3_8rltw"]
-[ext_resource type="Texture2D" uid="uid://bkvkssnm6elqt" path="res://assets/enemies/batao.png" id="4_25bpi"]
+[ext_resource type="Texture2D" uid="uid://d0m8s4wdqc4c8" path="res://assets/enemies/bat.png" id="4_vnaxn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d0yid"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_25bpi")
+"texture": ExtResource("4_vnaxn")
 }],
 "loop": true,
 "name": &"default",
@@ -17,7 +17,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhej5"]
-size = Vector2(81, 50)
+size = Vector2(103.5, 65)
 
 [node name="EnemyLight" type="Area2D" groups=["Enemies"]]
 script = ExtResource("1_wl7o2")
@@ -31,7 +31,7 @@ scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_d0yid")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(0.25, -0.5)
 shape = SubResource("RectangleShape2D_uhej5")
 
 [node name="AttackTimer" type="Timer" parent="."]
