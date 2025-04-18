@@ -16,6 +16,7 @@
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source🐈-badge/)
 [![LICENCE](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+
 </div>
 <br>
 
@@ -55,14 +56,13 @@ This game was made with Godot under 9 days for Furry Game Jam #1. The theme was 
 <br/>
 <h2 id="controls">🕹️ Controls </h2>
 
-| Input                     |        Description       |
-|--------------------------:|:-------------------------|
-| A and ←                   | Left                     |
-| D and →                   | Right                    |
-| W and ↑                   | Up                       |
-| S e ↓                     | Down                     |
-| Left mouse Button         | Parry                    |
-
+|             Input | Description |
+| ----------------: | :---------- |
+|           A and ← | Left        |
+|           D and → | Right       |
+|           W and ↑ | Up          |
+|             S e ↓ | Down        |
+| Left mouse Button | Parry       |
 
 <br/>
 
@@ -77,7 +77,7 @@ Special thank you for all people that contributed for this project.
         <img src="https://avatars.githubusercontent.com/u/97451601?v=4" width="100px;" alt="Alisson Lindote Picture"/><br>
         <sub>
           <b>Alisson Lindote</b><br/>
-          <i>Intern</i>
+          <i>Developer | Manager </i>
         </sub>
       </a>
     </td>
@@ -86,7 +86,7 @@ Special thank you for all people that contributed for this project.
         <img src="https://avatars.githubusercontent.com/u/83541996?v=4" width="100px;" alt="Andrew Mendes 'Elfo' Picture"/><br>
         <sub>
           <b>Andrew Mendes</b><br/>
-          <i>Art Master</i>
+          <i>Developer | Designer | Music</i>
         </sub>
       </a>
     </td>
@@ -95,7 +95,7 @@ Special thank you for all people that contributed for this project.
         <img src="https://avatars.githubusercontent.com/u/81536290?v=4" width="100px;" alt="Felipe Gil Picture"/><br>
         <sub>
           <b>Felipe Gil</b><br/>
-          <i>Dev Junior</i>
+          <i>Developer | SFX </i>
         </sub>
       </a>
     </td>
@@ -104,7 +104,7 @@ Special thank you for all people that contributed for this project.
         <img src="https://avatars.githubusercontent.com/u/16151265?v=4" width="100px;" alt="Marcelo 'Holysparks' Picture"/><br>
         <sub>
           <b>Marcelo 'Holysparks'</b><br/>
-          <i>Dev Senior</i>
+          <i>Developer | Game Design</i>
         </sub>
       </a>
     </td>
@@ -114,6 +114,7 @@ Special thank you for all people that contributed for this project.
 <h2 id="references">📝 References </h2>
 
 This is the list of games, articles, creators that we took inspiration to work in this project.
+
 <table>
   <tr>
     <td align="center">
@@ -167,6 +168,6 @@ Here is our Special Thanks and Aknowledges for all of those who help us developi
     "Composer": "Andrew Andruid",
     "Sound design": "Marcelo Holy"
  }
-````
+```
 
 <img src="https://starchart.cc/GameCraftBuild/big-jam-five.svg">
