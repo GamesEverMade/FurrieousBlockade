@@ -39,7 +39,7 @@
 </p>
 
 <p align="center">
-    <img src="../example1.jpg" alt="Image Example" width="400px"></img> 
+    <img src="./example1.jpg" alt="Image Example" width="400px"></img> 
 </p>
 
 <h2 id="started">📌 About  </h2>
