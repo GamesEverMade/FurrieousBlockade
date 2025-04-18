@@ -1,75 +1,172 @@
-フリエオウス　ブラケ　ブロクラデ
+[JAVASCRIPT__BADGE]: https://img.shields.io/badge/Javascript-000?style=for-the-badge&logo=javascript
+[KRITA__BADGE]: https://img.shields.io/badge/Krita-203759?style=for-the-badge&logo=krita&logoColor=EEF37B
+[PHOTOSHOP__BADGE]: https://img.shields.io/badge/Adobe%20Photoshop-31A8FF?style=for-the-badge&logo=Adobe%20Photoshop&logoColor=black
+[ITCHIO__BADGE]: https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white
+[TRELLO__BADGE]: https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white
+[GIT__BADGE]: https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white
 
-# Furrieous Brake Blockade
+<div align='center'>
+    <img src='./GamesEverMade_logo.png' alt='GamesEverMade logo' width='120'>
+</div>
+<a align="center" href="https://itch.io/jam/furries"> #1 Furry Game Jam website</a>
 
-Fender, the Defender, histories
+<h1 align="center" style="font-weight: bold;"> 🐈 Unlock the Sun 🌞 </h1>
 
-## Furry Jam #1
+<div style="padding: 0px 0px 0px 26px">
 
-### Game Identity / Mantra:
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source🐈-badge/)
+[![LICENCE](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+</div>
+<br>
 
-### Mecânicas:
+<div align='center'>
 
-> O loop principal do jogo consiste em avançar por fases em que o jogador deverá desviar de obstáculos, deslocando-se entre 3 lanes enquanto manipula um escudo que deverá BLOQUEAR os projéteis / inimigos que tentam atacar o jogador.
-> Possivelmente deveríamos ter um meta jogo em que existe uma progressão (???)
+[![Made with Godot](https://img.shields.io/badge/Made%20with-Godot-478CBF?style=for-the-badge&logo=godot%20engine&logoColor=white)](https://godotengine.org)
+![krita][KRITA__BADGE]
+![photoshop][PHOTOSHOP__BADGE]
+[![itch.io][ITCHIO__BADGE]](https://games-ever-made.itch.io/unlock-the-sun)
+![trello][TRELLO__BADGE]
+![git][GIT__BADGE]
 
-### Perguntas sobre mecânicas:
+</div>
 
-> A corrida do jogador acontece dentro do contexto de uma batalha?Ou seja, o inimigo fica lançando ataques contra o jogador e ele deve vencer a batalha usando apenas BLOCK? <br> Sistema de parry (forma de dar dano no inimigo é dando parry nos seus ataques?) <br> O jogo é baseado em score? Como se calcula? <br> O jogo tem fases? Como serão organizadas? São predefinidas ou serão aleatórias? <br> Que tipo de tela vai indicar ao jogador quais ataques deve receber? <br> Como o jogo vai exigir maestria do jogador? Se o jogo for simples demais fica chato. Se for difícil demais, as pessoas desistem. <br> Como as mecânicas serão apresentadas/introduzidas ao jogador? <br> Se as mecânicas não forem introduzidas/transmitidas da forma correta, o jogador não irá entender como o jogo funciona e irá desistir de jogar <br> O que esperamos desta jam a nível de satisfação dos jogadores? <br> Qual deve ser a experiência de jogar este jogo? <br> O que será cativante no jogo?
+<p align="center">
+ <a href="#about">About</a> • 
+ <a href="#controls">Controls</a> • 
+  <a href="#colab">Collaborators</a> •
+ <a href="#references">References</a> •
+ <a href="#aknowledges">Aknowledges</a> •
+</p>
 
-### Controles Basicos:
+<p align="center">
+    <img src="../example1.jpg" alt="Image Example" width="400px"></img> 
+</p>
 
-> A e ← : Esquerda <br>
-> D e → : Direita <br>
-> W e ↑ : Cima <br>
-> S e ↓ : Baixo <br>
-> Botão esquerdo do mouse: Parry <br>
+<h2 id="started">📌 About  </h2>
 
-### Design Pillars:
+The Bat Country Syndicate has blocked out the Sun to create an eternal night, but you have stolen the Astral Neon back. To save the day, race to the star and Unlock the Sun!
 
-> ⛔ BLOCKED ⛔
+This game was made with Godot under 9 days for Furry Game Jam #1. The theme was "Blocked".
 
-### Inspirations:
+<p>Visit our project, clicking on the button bellow</p>
 
-> Temple Run <br>
-> Arkanoid <br>
-> Far Cry: Blood Dragon <br>
-> Star Fox <br>
+[![itch.io][ITCHIO__BADGE]](https://games-ever-made.itch.io/unlock-the-sun)
 
-### Resumo do Gênero/História/Mecânicas:
+<br/>
+<h2 id="controls">🕹️ Controls </h2>
 
-> Runner, onde o jogador bloqueia e reflete projéteis enquanto desvia de obstáculos. Grupo de morcegos apagaram o Sol, o protagonista roubou a chama de volta e está em fuga para reacender o astro rei.
+| Input                     |        Description       |
+|--------------------------:|:-------------------------|
+| A and ←                   | Left                     |
+| D and →                   | Right                    |
+| W and ↑                   | Up                       |
+| S e ↓                     | Down                     |
+| Left mouse Button         | Parry                    |
 
-### Features:
 
-> Runner in 2.5D <br>
-> Mouse to block and reflect bullets
+<br/>
 
-### Interface:
+<h2 id="colab">🤝 Collaborators</h2>
 
-> Estilo Artistico do Menu? <br>
-> Layout do GUI dentro do Jogo? <br>
-> Layout do Menu, Pause, Game Over, Victory
+Special thank you for all people that contributed for this project.
 
-### Art Style:
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/lindotex">
+        <img src="https://avatars.githubusercontent.com/u/97451601?v=4" width="100px;" alt="Alisson Lindote Picture"/><br>
+        <sub>
+          <b>Alisson Lindote</b><br/>
+          <i>Intern</i>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/andrew-mendes">
+        <img src="https://avatars.githubusercontent.com/u/83541996?v=4" width="100px;" alt="Andrew Mendes 'Elfo' Picture"/><br>
+        <sub>
+          <b>Andrew Mendes</b><br/>
+          <i>Art Master</i>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/fgil90">
+        <img src="https://avatars.githubusercontent.com/u/81536290?v=4" width="100px;" alt="Felipe Gil Picture"/><br>
+        <sub>
+          <b>Felipe Gil</b><br/>
+          <i>Dev Junior</i>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/MarceloLMoreira">
+        <img src="https://avatars.githubusercontent.com/u/16151265?v=4" width="100px;" alt="Marcelo 'Holysparks' Picture"/><br>
+        <sub>
+          <b>Marcelo 'Holysparks'</b><br/>
+          <i>Dev Senior</i>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-> Synthwave
+<h2 id="references">📝 References </h2>
 
-### Music/Sound:
+This is the list of games, articles, creators that we took inspiration to work in this project.
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://play.google.com/store/apps/details?id=com.imangi.templerun&hl=en_IE">
+        <img src="https://static.wikia.nocookie.net/templerun/images/e/ed/TRTitleScreen.png/revision/latest/scale-to-width-down/985?cb=20170121135214" width="100px;" alt="temple run picture"/><br>
+        <sub>
+          <b>Temple Run</b><br/>
+          <i>Imangi Studios</i>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://en.wikipedia.org/wiki/Far_Cry_3:_Blood_Dragon">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Arkanoid_arcadeflyer.png" width="100px;" alt="arkanoid picture"/><br>
+        <sub>
+          <b>Arkanoid</b><br/>
+          <i>Ubisoft Montreal</i>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://en.wikipedia.org/wiki/Arkanoid">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/67/FC3_Blood_Dragon_Cover.jpg" width="100px;" alt="arkanoid picture"/><br>
+        <sub>
+          <b>Far Cry: Blood Dragon</b><br/>
+          <i>Taito Corporation</i>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://en.wikipedia.org/wiki/Star_Fox">
+        <img src="https://m.media-amazon.com/images/M/MV5BMjU3ZTA1YmUtYWI2ZS00Mzc0LWEzOGUtOTg4YWIyNjM2N2NiXkEyXkFqcGc@._V1_.jpg" width="100px;" alt="arkanoid picture"/><br>
+        <sub>
+          <b>Starfox</b><br/>
+          <i>Nintendo</i>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-> To BE DEFINED
+<h2 id="aknowledges">Special tanks and Aknowledges</h2>
 
-#### Referências:
+Here is our Special Thanks and Aknowledges for all of those who help us developing this project:
 
-[Back To The 80's, Marvel83' Edition ](https://www.youtube.com/watch?v=0QKQlf8r7ls&ab_channel=ThePrimeThanatos)
+```cs
+ {
+    "Game design": {"Alisson Lindote", "Andrew Andruid”, "Felipe Gilgadev", "Marcelo Holy”},
+    "Programming": {"Alisson Lindote", "Felipe Gilgadev", "Marcelo Holy"},
+    "Graphic assets": "Andrew Andruid",
+    "Composer": "Andrew Andruid",
+    "Sound design": "Marcelo Holy"
+ }
+````
 
-[Roundtable Hold (from "Elden Ring")](https://www.youtube.com/watch?v=MoflpkG6ZS4&list=OLAK5uy_mHjBFcJLRoJxGYdEsy9UrFUI9rsr_2BoY)
-
-### Development Roadmap / Launch Criteria:
-
-|  Milestone  |     Description      | Percentage |
-| :---------: | :------------------: | :--------: |
-| Milestone 1 |  Mechanics complete  |   0/0/00   |
-| Milestone 2 | Boss fights complete |   0/0/00   |
-| Milestone 3 |   Levels complete    |   0/0/00   |
-| Milestone 4 |   Polish complete    |   0/0/00   |
+<img src="https://starchart.cc/GameCraftBuild/big-jam-five.svg">
